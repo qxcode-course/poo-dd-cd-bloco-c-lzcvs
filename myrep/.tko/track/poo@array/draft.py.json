@@ -1,0 +1,499 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-03_03-37-21",
+            "content": "@@ -1,43 +0,0 @@\n-lista = %5B%5D%0Alista = %5B1,2,3,4,5%5D%0Aprint(lista)\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-03_03-44-27",
+            "content": "@@ -4,16 +4,36 @@\n ta = %5B%5D%0A\n+lista = %5B1,2,3,4,5%5D%0A\n print(li\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-03_03-44-49",
+            "content": "@@ -6,17 +6,8 @@\n  = %5B\n-1,3,4,8,9\n %5D%0Apr\n@@ -19,8 +19,5 @@\n ista\n-%5B2%5D\n )\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-28",
+            "content": "@@ -25,11 +25,11 @@\n t(lista%5B\n-1\n+2\n %5D)\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-33",
+            "content": "@@ -29,7 +29,7 @@\n sta%5B\n-0\n+1\n %5D)\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-36",
+            "content": "@@ -25,11 +25,11 @@\n t(lista%5B\n-9\n+0\n %5D)\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-40",
+            "content": "@@ -25,10 +25,11 @@\n t(lista%5B\n+9\n %5D)\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-44",
+            "content": "@@ -24,9 +24,11 @@\n nt(lista\n+%5B%5D\n )\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-03_03-45-48",
+            "content": "@@ -1,60 +1,163 @@\n-array: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1,\n+@@ -1,56 +1,30 @@%0A-array: list%255Bint%255D = %255B%255D%250Aarray%0A+lista%0A  = %255B1,%0A-\n  2,\n+ %0A\n  3,\n- 4, 5%5D%0Aprint(array\n+%0A- %0A 4,%0A- 5%0A+8,9%0A %255D%250Aprint(%0A arra%0A@@ -23,10 +23,10 @@%0A int(%0A-array%0A+lista%0A \n )%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-06_19-33-36",
+            "content": "@@ -57,17 +57,4 @@\n ay)%0A\n-print(array2)\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-06_19-33-37",
+            "content": "@@ -1,23 +1,4 @@\n-import numpy as np%0A\n arra\n@@ -70,49 +70,4 @@\n ay2)\n-%0Aarray = np.array(%5Barray2%5D)%0Aprint(len(array))\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-06_19-36-43",
+            "content": "@@ -1,138 +1,52 @@\n-import numpy as np%0Aarray: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0Aarray = np.array(%5Barray2%5D)%0Aprint(array\n+@@ -123,16 +123,15 @@%0A int(%0A+len(%0A array%0A-\n .size\n+%0A \n ))\n+%0A\n",
+            "lines": "6"
+        },
+        {
+            "label": "2025-11-06_19-37-28",
+            "content": "@@ -130,8 +130,9 @@\n ay.size)\n+)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2025-11-06_19-37-29",
+            "content": "@@ -134,23 +134,4 @@\n ize)\n-%0Aleng = len(array2)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2025-11-06_19-39-08",
+            "content": "@@ -153,16 +153,4 @@\n ay2)\n-%0Aprint(leng)\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-06_19-39-16",
+            "content": "@@ -1,9 +1,8 @@\n-#\n import n\n@@ -86,17 +86,16 @@\n array2)%0A\n-#\n array = \n@@ -117,9 +117,8 @@\n 2%5D)%0A\n-#\n prin\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-06_19-39-32",
+            "content": "@@ -1,12 +1,32 @@\n+#import numpy as np%0A\n array: list%5B\n@@ -83,24 +83,53 @@\n int(array2)%0A\n+#array = np.array(%5Barray2%5D)%0A#\n print(array.\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-06_19-39-46",
+            "content": "@@ -67,16 +67,33 @@\n array2)%0A\n+print(array.size)\n %0Aleng = \n",
+            "lines": "7"
+        },
+        {
+            "label": "2025-11-06_19-39-53",
+            "content": "@@ -67,16 +67,17 @@\n array2)%0A\n+%0A\n leng = l\n@@ -102,55 +102,4 @@\n eng)\n-%0Afor item in array:%0A    counter += 1%0Aprint(counter)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2025-11-06_19-40-47",
+            "content": "@@ -102,20 +102,8 @@\n ng)%0A\n-counter = 0%0A\n for \n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-06_19-40-57",
+            "content": "@@ -127,17 +127,16 @@\n in array\n-2\n :%0A    co\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-06_19-41-08",
+            "content": "@@ -1,174 +1,38 @@\n-array: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0Aleng = len(array2)%0Aprint(leng)%0Acounter = 0%0Afor item in array2:%0A    counter += 1%0Aprint(counter)%0A%0A\n+@@ -165,21 +165,4 @@%0A ter)%0A-%250A%250A\n arra\n@@ -47,16 +47,4 @@\n (1)%0A\n-print(array)\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-06_19-43-02",
+            "content": "@@ -181,17 +181,8 @@\n nd(1\n-, 2, 3, 3\n )%0Apr\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-06_19-43-10",
+            "content": "@@ -181,16 +181,19 @@\n nd(1, 2,\n+ 3,\n  3)%0Aprin\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-06_19-43-18",
+            "content": "@@ -177,16 +177,22 @@\n append(1\n+, 2, 3\n )%0Aprint(\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-06_19-43-24",
+            "content": "@@ -19,24 +19,8 @@\n  %5B%5D%0A\n-array.append(1)%0A\n arra\n@@ -163,8 +163,36 @@\n unter)%0A%0A\n+array.append(1)%0Aprint(array)\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-06_19-43-34",
+            "content": "@@ -15,16 +15,32 @@\n t%5D = %5B%5D%0A\n+array.append(1)%0A\n array2 =\n@@ -56,16 +56,16 @@\n , 4, 5%5D%0A\n-\n print(ar\n@@ -83,17 +83,16 @@\n array2)%0A\n-%0A\n leng = l\n@@ -114,17 +114,16 @@\n t(leng)%0A\n-%0A\n counter \n@@ -183,32 +183,4 @@\n r)%0A%0A\n-array.append(1)%0Aprint(array)\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-11-06_19-44-37",
+            "content": "@@ -197,21 +197,4 @@\n ray)\n-%0Aarray.insert(2)%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-11-06_19-44-58",
+            "content": "@@ -210,20 +210,8 @@\n sert(2)%0A\n-print(array)\n",
+            "lines": "16"
+        },
+        {
+            "label": "2025-11-06_19-45-03",
+            "content": "@@ -207,19 +207,16 @@\n .insert(\n-2, \n 2)%0Aprint\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-06_19-45-04",
+            "content": "@@ -207,17 +207,17 @@\n .insert(\n-3\n+2\n , 2)%0Apri\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-06_19-45-15",
+            "content": "@@ -207,17 +207,17 @@\n .insert(\n-0\n+3\n , 2)%0Apri\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-06_19-45-29",
+            "content": "@@ -216,94 +216,15 @@\n , 2)\n- # insere posi%C3%A7%C3%A3o especifica%0Aprint(array)%0A%0Ajuncao_array = array + array2%0Aprint(juncao_\n+%0Aprint(\n arra\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-11-06_19-48-16",
+            "content": "@@ -308,30 +308,4 @@\n ray)\n-%0A%0Aprint(juncao_array.sort)\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-06_19-49-19",
+            "content": "@@ -316,13 +316,8 @@\n int(\n-sort(\n junc\n@@ -308,25 +308,30 @@\n ray)%0A%0Aprint(juncao_array\n+.sort\n )\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-49-31",
+            "content": "@@ -330,9 +330,8 @@\n o_array)\n-)\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-49-32",
+            "content": "@@ -285,16 +285,22 @@\n  array2%0A\n+print(\n juncao_a\n@@ -307,23 +307,20 @@\n rray\n-.remove(2)%0Aprin\n+)%0A%0Aprint(sor\n t(ju\n@@ -318,22 +318,21 @@\n t(sort(juncao_array)\n-%0A%0A\n+)\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-51-19",
+            "content": "@@ -305,17 +305,17 @@\n .remove(\n-1\n+2\n )%0Aprint(\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-51-29",
+            "content": "@@ -312,31 +312,8 @@\n (1)%0A\n-juncao_array.remove(2)%0A\n prin\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-51-44",
+            "content": "@@ -285,16 +285,62 @@\n  array2%0A\n+juncao_array.remove(1)%0Ajuncao_array.remove(2)%0A\n print(ju\n",
+            "lines": "23"
+        },
+        {
+            "label": "2025-11-06_19-51-56",
+            "content": "@@ -289,21 +289,8 @@\n ay2%0A\n-juncao_array%0A\n prin\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-06_19-52-07",
+            "content": "@@ -301,18 +301,8 @@\n rray\n-.remove(1)\n %0Apri\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-52-10",
+            "content": "@@ -305,17 +305,17 @@\n .remove(\n-2\n+1\n )%0Aprint(\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-52-13",
+            "content": "@@ -312,31 +312,8 @@\n (2)%0A\n-juncao_array.remove(1)%0A\n prin\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-06_19-52-22",
+            "content": "@@ -356,55 +356,4 @@\n y)%0A%0A\n-array = %5B'ametista', 'garnet', 'perola'%0A,'steven'%0A%5D\n",
+            "lines": "23"
+        },
+        {
+            "label": "2025-11-06_19-52-59",
+            "content": "@@ -357,20 +357,16 @@\n )%0A%0Aarray\n-gens\n  = %5B'ame\n@@ -407,46 +407,4 @@\n n'%0A%5D\n-%0Aarraygens.remove('ametista')%0Aprint(array)\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-11-06_19-54-26",
+            "content": "@@ -448,13 +448,9 @@\n nt(array\n-gens\n )\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-54-27",
+            "content": "@@ -412,23 +412,8 @@\n '%0A%5D%0A\n-gem_removida = \n arra\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-54-55",
+            "content": "@@ -458,21 +458,18 @@\n )%0Aprint(\n-gem_removida\n+arraygens\n )\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-54-56",
+            "content": "@@ -408,22 +408,27 @@\n even'%0A%5D%0A\n-ametit\n+gem_removid\n a = arra\n@@ -424,24 +424,28 @@\n vida = array\n+gens\n .remove('ame\n@@ -456,19 +456,23 @@\n a')%0A\n-%0A\n print(\n-ametit\n+gem_removid\n a)\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-55-51",
+            "content": "@@ -409,24 +409,30 @@\n ven'%0A%5D%0Aa\n+metita = a\n rray\n-gens\n .remove(\n@@ -447,20 +447,19 @@\n a')%0A\n+%0A\n print(a\n-rraygens\n+metita\n )\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-06_19-56-29",
+            "content": "@@ -441,36 +441,8 @@\n a')%0A\n-gem_removida = arraygens%5B0%5D%0A\n prin\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-57-56",
+            "content": "@@ -485,24 +485,4 @@\n ens)\n-%0Aprint(gem_removida)\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-06_19-57-57",
+            "content": "@@ -475,34 +475,34 @@\n int(\n-gem_removida)%0Aprint(arraygens\n+arraygens)%0Aprint(gem_removida\n )\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_19-58-04",
+            "content": "@@ -412,36 +412,8 @@\n '%0A%5D%0A\n-gem_removida = arraygens%5B0%5D%0A\n arra\n@@ -436,16 +436,44 @@\n etista')\n+%0Agem_removida = arraygens%5B0%5D\n %0Aprint(g\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_19-58-14",
+            "content": "@@ -285,16 +285,62 @@\n  array2%0A\n+juncao_array.remove(2)%0Ajuncao_array.remove(1)%0A\n print(ju\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_19-59-16",
+            "content": "@@ -289,28 +289,8 @@\n ay2%0A\n-juncao_array.pop(1)%0A\n prin\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-06_19-59-36",
+            "content": "@@ -309,28 +309,8 @@\n (1)%0A\n-juncao_array.pop(0)%0A\n prin\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-06_19-59-48",
+            "content": "@@ -329,29 +329,8 @@\n (0)%0A\n-juncao_array.push(1)%0A\n prin\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-06_20-01-42",
+            "content": "@@ -342,19 +342,14 @@\n ray.\n-insert(0, 3\n+push(1\n )%0Apr\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-06_20-02-00",
+            "content": "@@ -432,28 +432,8 @@\n '%0A%5D%0A\n-arraygens.append(1)%0A\n gem_\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-06_20-02-46",
+            "content": "@@ -385,19 +385,8 @@\n gens\n-: list%5Bstr%5D\n  = %5B\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-02-55",
+            "content": "@@ -387,11 +387,17 @@\n ns: \n+list%5B\n str\n+%5D\n  = %5B\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-03-01",
+            "content": "@@ -381,16 +381,21 @@\n rraygens\n+: str\n  = %5B'ame\n@@ -454,15 +454,9 @@\n end(\n-'lapis'\n+1\n )%0Age\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-03-12",
+            "content": "@@ -455,16 +455,8 @@\n apis\n- lazulli\n ')%0Ag\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-03-15",
+            "content": "@@ -494,28 +494,8 @@\n %5B0%5D%0A\n-' '.join(arraygens)%0A\n arra\n@@ -555,9 +555,8 @@\n raygens)\n-%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-05-31",
+            "content": "@@ -490,16 +490,36 @@\n gens%5B0%5D%0A\n+' '.join(arraygens)%0A\n arraygen\n@@ -565,25 +565,16 @@\n )%0Aprint(\n-' '.join(\n arraygen\n@@ -575,10 +575,9 @@\n raygens)\n-)\n %0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-11-06_20-06-12",
+            "content": "@@ -570,32 +570,4 @@\n s))%0A\n-print(arraygens.split(' '))%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-07-13",
+            "content": "@@ -546,18 +546,17 @@\n %0Aprint('\n-%5B%5D\n+ \n '.join(a\n@@ -566,8 +566,36 @@\n ygens))%0A\n+print(arraygens.split(' '))%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-11-06_20-07-34",
+            "content": "@@ -551,14 +551,9 @@\n t('%5B\n-' + ' \n+%5D\n '.jo\n@@ -569,12 +569,6 @@\n ens)\n- + '%5D'\n )%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-08-05",
+            "content": "@@ -574,13 +574,12 @@\n ens) + '\n- \n %5D')%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-08-11",
+            "content": "@@ -547,17 +547,16 @@\n print('%5B\n- \n ' + ' '.\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-08-12",
+            "content": "@@ -584,67 +584,4 @@\n %5D')%0A\n-%0Aarray3 = %5B%5D%0An = range(input())%0Afor item in range(n):%0A    n    \n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-06_20-11-38",
+            "content": "@@ -1,634 +1,51 @@\n-array: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0A%0Aleng = len(array2)%0Aprint(leng)%0A%0Acounter = 0%0Afor item in array2:%0A    counter += 1%0Aprint(counter)%0A%0Aarray.append(1)%0Aprint(array)%0Aarray.insert(0, 2) # insere posi%C3%A7%C3%A3o especifica%0Aprint(array)%0A%0Ajuncao_array = array + array2%0Ajuncao_array.pop(1)%0Ajuncao_array.pop(0)%0Ajuncao_array.insert(0, 3)%0Aprint(juncao_array)%0A%0Aarraygens = %5B'ametista', 'garnet', 'perola'%0A,'steven'%0A%5D%0Aarraygens.append('lapis lazulli')%0Agem_removida = arraygens%5B0%5D%0Aarraygens.remove('ametista')%0Aprint(gem_removida)%0Aprint('%5B ' + ' '.join(arraygens) + ' %5D')%0A%0An = 10%0Alista = list(range(n + 1))%0Aprint(lista)\n+@@ -643,22 +643,8 @@%0A    n%0A- += 1%250Aprint(n)%0A     %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-06_20-15-37",
+            "content": "@@ -585,17 +585,18 @@\n ')%0A%0An = \n-5\n+10\n %0Alista =\n@@ -610,11 +610,25 @@\n ange\n- \n+(\n n + \n-2\n+1))%0Aprint(lista\n )\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-06",
+            "content": "@@ -616,17 +616,4 @@\n + 2)\n-%0Aprint(lista)\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-06_20-16-07",
+            "content": "@@ -609,16 +609,15 @@\n ange\n-(\n+ \n n + 2)\n-)\n %0Apri\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-18",
+            "content": "@@ -610,17 +610,17 @@\n nge(n + \n-1\n+2\n ))%0Aprint\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-25",
+            "content": "@@ -607,16 +607,20 @@\n (range(n\n+ + 1\n ))%0Aprint\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-29",
+            "content": "@@ -611,12 +611,8 @@\n ge(n\n- + 1\n ))%0Ap\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-34",
+            "content": "@@ -612,11 +612,11 @@\n e(n \n-* 2\n++ 1\n ))%0Ap\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-16-40",
+            "content": "@@ -607,16 +607,20 @@\n (range(n\n+ * 2\n ))%0Aprint\n@@ -630,45 +630,4 @@\n sta)\n-%0A%0An = 10%0Alista = %5Bi for i in range(n+1)%5D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-06_20-17-23",
+            "content": "@@ -663,20 +663,8 @@\n e(n+1)%5D%0A\n-print(lista)\n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-11-06_20-17-24",
+            "content": "@@ -624,25 +624,26 @@\n lista)%0A%0An = \n-5\n+10\n %0Alista = %5Bi \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-17-30",
+            "content": "@@ -610,11 +610,8 @@\n nge(\n-1+ \n n))%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-17-40",
+            "content": "@@ -607,17 +607,16 @@\n (range(1\n- \n + n))%0Apr\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-17-46",
+            "content": "@@ -1,688 +1,39 @@\n-array: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0A%0Aleng = len(array2)%0Aprint(leng)%0A%0Acounter = 0%0Afor item in array2:%0A    counter += 1%0Aprint(counter)%0A%0Aarray.append(1)%0Aprint(array)%0Aarray.insert(0, 2) # insere posi%C3%A7%C3%A3o especifica%0Aprint(array)%0A%0Ajuncao_array = array + array2%0Ajuncao_array.pop(1)%0Ajuncao_array.pop(0)%0Ajuncao_array.insert(0, 3)%0Aprint(juncao_array)%0A%0Aarraygens = %5B'ametista', 'garnet', 'perola'%0A,'steven'%0A%5D%0Aarraygens.append('lapis lazulli')%0Agem_removida = arraygens%5B0%5D%0Aarraygens.remove('ametista')%0Aprint(gem_removida)%0Aprint('%5B ' + ' '.join(arraygens) + ' %5D')%0A%0An = 5%0Alista = list(range(1 + n))%0Aprint(lista)%0A%0An = 5%0Alista = %5Bi**2 for i in range(n+1)%5D%0Aprint(lista)\n+@@ -648,10 +648,8 @@%0A = %255Bi%0A-+2%0A  for%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-06_20-19-08",
+            "content": "@@ -645,16 +645,17 @@\n ta = %5Bi*\n+*\n 2 for i \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-19-13",
+            "content": "@@ -647,25 +647,17 @@\n  = %5B\n-comeco for comeco\n+i*2 for i\n  in \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-19-25",
+            "content": "@@ -647,26 +647,25 @@\n  = %5B\n-expressao for item\n+comeco for comeco\n  in \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-19-45",
+            "content": "@@ -643,16 +643,25 @@\n ista = %5B\n+expressao\n  for ite\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-20-12",
+            "content": "@@ -643,20 +643,16 @@\n ista = %5B\n-item\n  for ite\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-20-12",
+            "content": "@@ -651,10 +651,8 @@\n item\n-/2\n  for\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-20-23",
+            "content": "@@ -639,32 +639,34 @@\n  5%0Alista = %5Bitem\n+/2\n  for item in ran\n@@ -690,74 +690,4 @@\n sta)\n-%0A%0Alista = %5Bitem for item in range(20) if numero %25 2 == 0%5D%0Aprint(lista)\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-06_20-22-46",
+            "content": "@@ -725,20 +725,22 @@\n (20) if \n-item\n+numero\n  %25 2 == \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-06_20-22-54",
+            "content": "@@ -718,17 +718,17 @@\n n range(\n-1\n+2\n 0) if it\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-06_20-23-02",
+            "content": "@@ -632,18 +632,17 @@\n a)%0A%0An = \n-10\n+5\n %0Alista =\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-06_20-23-12",
+            "content": "@@ -581,26 +581,25 @@\n  ' %5D')%0A%0An = \n-10\n+5\n %0Alista = lis\n@@ -725,12 +725,8 @@\n e(10\n- + 1\n ) if\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-06_20-23-47",
+            "content": "array: list[int] = []\narray2 = [1, 2, 3, 4, 5]\nprint(array)\nprint(array2)\n\nleng = len(array2)\nprint(leng)\n\ncounter = 0\nfor item in array2:\n    counter += 1\nprint(counter)\n\narray.append(1)\nprint(array)\narray.insert(0, 2) # insere posi\u00e7\u00e3o especifica\nprint(array)\n\njuncao_array = array + array2\njuncao_array.pop(1)\njuncao_array.pop(0)\njuncao_array.insert(0, 3)\nprint(juncao_array)\n\narraygens = ['ametista', 'garnet', 'perola'\n,'steven'\n]\narraygens.append('lapis lazulli')\ngem_removida = arraygens[0]\narraygens.remove('ametista')\nprint(gem_removida)\nprint('[ ' + ' '.join(arraygens) + ' ]')\n\nn = 10\nlista = list(range(1 + n))\nprint(lista)\n\nn = 10\nlista = [item for item in range(n+1)]\nprint(lista)\n\nlista = [item for item in range(10 + 1) if item % 2 == 0]\nprint(lista)",
+            "lines": "43"
+        }
+    ]
+}
