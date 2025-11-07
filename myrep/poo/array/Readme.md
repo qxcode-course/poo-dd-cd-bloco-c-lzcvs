@@ -21,10 +21,10 @@ Você pode testar utilizando um array de inteiros ou um array de objetos.
 - Adicionar e remover elementos em uma posição específica OK
 - Fazer impressão formatada utilizando o método join OK
 - Criar um array com elementos em sequência de zero a n OK
-- Criar um array com valores aleatórios 
-- Acessar elementos por índice
+- Criar um array com valores aleatórios OK
+- Acessar elementos por índice OK
 - Percorrer os elementos utilizando for-range
-- Percorrer os elementos utilizando for indexado
+- Percorrer os elementos utilizando for indexado OK
 - Procurar um elemento X usando laço
 - Procurar um elemento X usando função nativa
 - Criar um novo array com elementos filtrados, por exemplo, pares

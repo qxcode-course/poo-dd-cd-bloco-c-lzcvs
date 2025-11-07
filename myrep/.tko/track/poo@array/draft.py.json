@@ -492,8 +492,133 @@
         },
         {
             "label": "2025-11-06_20-23-47",
-            "content": "array: list[int] = []\narray2 = [1, 2, 3, 4, 5]\nprint(array)\nprint(array2)\n\nleng = len(array2)\nprint(leng)\n\ncounter = 0\nfor item in array2:\n    counter += 1\nprint(counter)\n\narray.append(1)\nprint(array)\narray.insert(0, 2) # insere posi\u00e7\u00e3o especifica\nprint(array)\n\njuncao_array = array + array2\njuncao_array.pop(1)\njuncao_array.pop(0)\njuncao_array.insert(0, 3)\nprint(juncao_array)\n\narraygens = ['ametista', 'garnet', 'perola'\n,'steven'\n]\narraygens.append('lapis lazulli')\ngem_removida = arraygens[0]\narraygens.remove('ametista')\nprint(gem_removida)\nprint('[ ' + ' '.join(arraygens) + ' ]')\n\nn = 10\nlista = list(range(1 + n))\nprint(lista)\n\nn = 10\nlista = [item for item in range(n+1)]\nprint(lista)\n\nlista = [item for item in range(10 + 1) if item % 2 == 0]\nprint(lista)",
+            "content": "@@ -1,18 +1,4 @@\n-import random%0A\n arra\n@@ -762,54 +762,4 @@\n sta)\n-%0A%0Aarrayaleatorio = %5Brandint%5D%0Aprint(arrayaleatorio)\n",
             "lines": "43"
+        },
+        {
+            "label": "2025-11-07_06-56-56",
+            "content": "@@ -778,30 +778,52 @@\n a)%0A%0A\n-print(random.randint(3,9)\n+arrayaleatorio = %5Brandint%5D%0Aprint(arrayaleatorio\n )\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-07_06-58-04",
+            "content": "@@ -795,10 +795,13 @@\n randint(\n+3,9\n ))\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-07_06-58-10",
+            "content": "@@ -799,11 +799,6 @@\n int(\n-4, 10\n ))\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-07_06-58-21",
+            "content": "@@ -778,27 +778,14 @@\n a)%0A%0A\n-%0Aarrayaleatorio = %5B\n+print(\n rand\n@@ -799,33 +799,11 @@\n int(\n-3\n+4\n , 10)\n-%5D%0Aprint(arrayaleatorio\n )\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-07_06-58-49",
+            "content": "@@ -1,852 +1,107 @@\n-import random%0Aarray: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0A%0Aleng = len(array2)%0Aprint(leng)%0A%0Acounter = 0%0Afor item in array2:%0A    counter += 1%0Aprint(counter)%0A%0Aarray.append(1)%0Aprint(array)%0Aarray.insert(0, 2) # insere posi%C3%A7%C3%A3o especifica%0Aprint(array)%0A%0Ajuncao_array = array + array2%0Ajuncao_array.pop(1)%0Ajuncao_array.pop(0)%0Ajuncao_array.insert(0, 3)%0Aprint(juncao_array)%0A%0Aarraygens = %5B'ametista', 'garnet', 'perola'%0A,'steven'%0A%5D%0Aarraygens.append('lapis lazulli')%0Agem_removida = arraygens%5B0%5D%0Aarraygens.remove('ametista')%0Aprint(gem_removida)%0Aprint('%5B ' + ' '.join(arraygens) + ' %5D')%0A%0An = 10%0Alista = list(range(1 + n))%0Aprint(lista)%0A%0An = 10%0Alista = %5Bitem for item in range(n+1)%5D%0Aprint(lista)%0A%0Alista = %5Bitem for item in range(10 + 1) if item %25 2 == 0%5D%0Aprint(lista)%0A%0A%0Aarrayaleatorio = (range(%5Brandom.randint(3, 10)%5D)%0Aprint(arrayaleatorio)\n+@@ -792,27 +792,16 @@%0A torio = %0A-list(range(%0A %255Brandom.%0A@@ -815,18 +815,16 @@%0A (3, 10)%255D%0A-))%0A %250Aprint(a%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-07_07-02-29",
+            "content": "@@ -823,17 +823,16 @@\n 3, 10)%5D)\n-)\n %0Aprint(a\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-07_07-02-34",
+            "content": "@@ -1,864 +1,126 @@\n-import random%0Aarray: list%5Bint%5D = %5B%5D%0Aarray2 = %5B1, 2, 3, 4, 5%5D%0Aprint(array)%0Aprint(array2)%0A%0Aleng = len(array2)%0Aprint(leng)%0A%0Acounter = 0%0Afor item in array2:%0A    counter += 1%0Aprint(counter)%0A%0Aarray.append(1)%0Aprint(array)%0Aarray.insert(0, 2) # insere posi%C3%A7%C3%A3o especifica%0Aprint(array)%0A%0Ajuncao_array = array + array2%0Ajuncao_array.pop(1)%0Ajuncao_array.pop(0)%0Ajuncao_array.insert(0, 3)%0Aprint(juncao_array)%0A%0Aarraygens = %5B'ametista', 'garnet', 'perola'%0A,'steven'%0A%5D%0Aarraygens.append('lapis lazulli')%0Agem_removida = arraygens%5B0%5D%0Aarraygens.remove('ametista')%0Aprint(gem_removida)%0Aprint('%5B ' + ' '.join(arraygens) + ' %5D')%0A%0An = 10%0Alista = list(range(1 + n))%0Aprint(lista)%0A%0An = 10%0Alista = %5Bitem for item in range(n+1)%5D%0Aprint(lista)%0A%0Alista = %5Bitem for item in range(10 + 1) if item %25 2 == 0%5D%0Aprint(lista)%0A%0A%0Aarrayaleatorio = %5Brandom.randint(0, 100) for _ in range(10)%5D%0Aprint(arrayaleatorio)\n+@@ -792,34 +792,24 @@%0A torio = %0A-%255Bitem for item in %0A+(range(%255B%0A random.r%0A@@ -822,16 +822,18 @@%0A (3, 10)%255D%0A+))%0A %250Aprint(a%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-07_07-05-00",
+            "content": "@@ -839,24 +839,8 @@\n 10)%5D\n- # _ placeholder\n %0Apri\n@@ -861,29 +861,4 @@\n rio)\n-%0Aprint(arrayaleatorio%5B2%5D)\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-07_07-06-49",
+            "content": "@@ -902,90 +902,4 @@\n %5B2%5D)\n-%0Afor i, valor in enumerate(arrayaleatorio):%0A    print(f'indice: %7Bi%7D, valor: %7Bvalor%7D')%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2025-11-07_07-08-30",
+            "content": "@@ -988,54 +988,4 @@\n %7D')%0A\n-%0Afor i in range(len(arrayaleatorio)):%0A    print(i)\n",
+            "lines": "51"
+        },
+        {
+            "label": "2025-11-07_07-09-12",
+            "content": "@@ -986,31 +986,24 @@\n or%7D')%0A%0Afor i\n-, valor\n  in range(le\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-07_07-09-31",
+            "content": "@@ -1040,16 +1040,9 @@\n  print(i\n-, valor\n )\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-07_07-09-35",
+            "content": "@@ -899,17 +899,16 @@\n rio%5B2%5D)%0A\n-%0A\n for i, v\n@@ -989,92 +989,67 @@\n ')%0A%0A\n-arrayaleatorio = %5Brandom.randint(0, 100) for _ range(10) if item %25 2 == 0%5D%0Aprint(array)%0A\n+for i, valor in range(len(arrayaleatorio)):%0A    print(i, valor)\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-07_07-11-53",
+            "content": "@@ -1060,31 +1060,22 @@\n  2 == 0%5D%0Aprint(array\n-aleatorio\n )%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-07_07-11-54",
+            "content": "@@ -1024,35 +1024,32 @@\n nt(0, 100) for _\n- in\n  range(10) if it\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-07_07-12-11",
+            "content": "@@ -1049,17 +1049,20 @@\n (10) if \n-_\n+item\n  %25 2 == \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-07_07-12-39",
+            "content": "@@ -1,10 +1,8 @@\n-# \n import r\n@@ -7,18 +7,16 @@\n  random%0A\n-# \n array: l\n@@ -29,18 +29,16 @@\n t%5D = %5B%5D%0A\n-# \n array2 =\n@@ -54,18 +54,16 @@\n , 4, 5%5D%0A\n-# \n print(ar\n@@ -67,18 +67,16 @@\n (array)%0A\n-# \n print(ar\n@@ -82,18 +82,16 @@\n rray2)%0A%0A\n-# \n leng = l\n@@ -101,18 +101,16 @@\n array2)%0A\n-# \n print(le\n@@ -114,18 +114,16 @@\n (leng)%0A%0A\n-# \n counter \n@@ -126,18 +126,16 @@\n ter = 0%0A\n-# \n for item\n@@ -146,18 +146,16 @@\n array2:%0A\n-# \n     coun\n@@ -163,18 +163,16 @@\n er += 1%0A\n-# \n print(co\n@@ -179,18 +179,16 @@\n unter)%0A%0A\n-# \n array.ap\n@@ -195,18 +195,16 @@\n pend(1)%0A\n-# \n print(ar\n@@ -208,18 +208,16 @@\n (array)%0A\n-# \n array.in\n@@ -255,18 +255,16 @@\n ecifica%0A\n-# \n print(ar\n@@ -269,18 +269,16 @@\n array)%0A%0A\n-# \n juncao_a\n@@ -299,18 +299,16 @@\n  array2%0A\n-# \n juncao_a\n@@ -319,18 +319,16 @@\n .pop(1)%0A\n-# \n juncao_a\n@@ -339,18 +339,16 @@\n .pop(0)%0A\n-# \n juncao_a\n@@ -365,18 +365,16 @@\n t(0, 3)%0A\n-# \n print(ju\n@@ -386,18 +386,16 @@\n array)%0A%0A\n-# \n arraygen\n@@ -430,18 +430,16 @@\n perola'%0A\n-# \n ,'steven\n@@ -444,14 +444,10 @@\n en'%0A\n-# %5D%0A# \n+%5D%0A\n arra\n@@ -476,18 +476,16 @@\n zulli')%0A\n-# \n gem_remo\n@@ -504,18 +504,16 @@\n gens%5B0%5D%0A\n-# \n arraygen\n@@ -533,18 +533,16 @@\n tista')%0A\n-# \n print(ge\n@@ -553,18 +553,16 @@\n movida)%0A\n-# \n print('%5B\n@@ -595,27 +595,23 @@\n  ' %5D')%0A%0A\n-# \n n = 10%0A\n-# \n lista = \n@@ -629,18 +629,16 @@\n 1 + n))%0A\n-# \n print(li\n@@ -647,19 +647,15 @@\n a)%0A%0A\n-# \n n = 10%0A\n-# \n list\n@@ -688,18 +688,16 @@\n e(n+1)%5D%0A\n-# \n print(li\n@@ -702,18 +702,16 @@\n lista)%0A%0A\n-# \n lista = \n@@ -756,26 +756,24 @@\n m %25 2 == 0%5D%0A\n-# \n print(lista)\n@@ -775,18 +775,16 @@\n ista)%0A%0A%0A\n-# \n arrayale\n@@ -852,18 +852,16 @@\n eholder%0A\n-# \n print(ar\n@@ -874,18 +874,16 @@\n atorio)%0A\n-# \n print(ar\n@@ -900,18 +900,16 @@\n io%5B2%5D)%0A%0A\n-# \n for i, v\n@@ -943,18 +943,16 @@\n torio):%0A\n-# \n     prin\n@@ -986,18 +986,16 @@\n lor%7D')%0A%0A\n-# \n arrayale\n@@ -1061,18 +1061,16 @@\n 2 == 0%5D%0A\n-# \n print(ar\n@@ -1087,294 +1087,4 @@\n io)%0A\n-%0Aclass Foo:%0A    def __init__(self), x: int:%0A        self.x = x%0A    def __str__(self):%0A        return f'Foo%7Bself.x%7D'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo(3), Foo(4)%5D%0A%0Aprint(lista_preenchida_objetos\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-07_07-24-37",
+            "content": "@@ -1459,9 +1459,8 @@\n _objetos\n-)\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-07_07-24-38",
+            "content": "@@ -1,1467 +1,100 @@\n-# import random%0A# array: list%5Bint%5D = %5B%5D%0A# array2 = %5B1, 2, 3, 4, 5%5D%0A# print(array)%0A# print(array2)%0A%0A# leng = len(array2)%0A# print(leng)%0A%0A# counter = 0%0A# for item in array2:%0A#     counter += 1%0A# print(counter)%0A%0A# array.append(1)%0A# print(array)%0A# array.insert(0, 2) # insere posi%C3%A7%C3%A3o especifica%0A# print(array)%0A%0A# juncao_array = array + array2%0A# juncao_array.pop(1)%0A# juncao_array.pop(0)%0A# juncao_array.insert(0, 3)%0A# print(juncao_array)%0A%0A# arraygens = %5B'ametista', 'garnet', 'perola'%0A# ,'steven'%0A# %5D%0A# arraygens.append('lapis lazulli')%0A# gem_removida = arraygens%5B0%5D%0A# arraygens.remove('ametista')%0A# print(gem_removida)%0A# print('%5B ' + ' '.join(arraygens) + ' %5D')%0A%0A# n = 10%0A# lista = list(range(1 + n))%0A# print(lista)%0A%0A# n = 10%0A# lista = %5Bitem for item in range(n+1)%5D%0A# print(lista)%0A%0A# lista = %5Bitem for item in range(10 + 1) if item %25 2 == 0%5D%0A# print(lista)%0A%0A%0A# arrayaleatorio = %5Brandom.randint(0, 100) for _ in range(10)%5D # _ placeholder%0A# print(arrayaleatorio)%0A# print(arrayaleatorio%5B2%5D)%0A%0A# for i, valor in enumerate(arrayaleatorio):%0A#     print(f'indice: %7Bi%7D, valor: %7Bvalor%7D')%0A%0A# arrayaleatorio = %5Brandom.randint(0, 100) for _ in range(10) if _ %25 2 == 0%5D%0A# print(arrayaleatorio)%0A%0Aclass Foo:%0A    def __init__(self, x: int):%0A        self.x = x%0A    def __str__(self):%0A        return f'Foo%7Bself.x%7D'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo(3), Foo(4)%5D%0A%0Aprint(lista_preenchida_objetos)\n+@@ -1206,16 +1206,17 @@%0A self%0A+)%0A , x: int%0A ):%250A %0A@@ -1211,17 +1211,16 @@%0A , x: int%0A-)%0A :%250A      %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-07_07-25-00",
+            "content": "@@ -1451,9 +1451,17 @@\n eenchida\n+_objetos\n )\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-07_07-25-01",
+            "content": "@@ -1369,16 +1369,17 @@\n a_preenc\n+h\n ida_obje\n@@ -1430,72 +1430,10 @@\n o(4)\n-, Foo(5)%5D%0A%0Alista_vazia.append(1)%0Alista_preenchida.append(Foo(6))\n+%5D%0A\n %0Apri\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-07_07-25-40",
+            "content": "@@ -1,8 +1,30 @@\n+@@ -1,1475 +1,52 @@%0A- \n import r\n@@ -28,17 +28,19 @@\n t random\n-%0A\n+%250A\n  array: \n@@ -43,27 +43,37 @@\n ay: list\n-%5Bint%5D = %5B%5D%0A\n+%255Bint%255D = %255B%255D%250A\n  array2 \n@@ -74,17 +74,19 @@\n rray2 = \n-%5B\n+%255B\n 1, 2, 3,\n@@ -90,18 +90,22 @@\n  3, 4, 5\n-%5D%0A\n+%255D%250A\n  print(a\n@@ -109,17 +109,19 @@\n t(array)\n-%0A\n+%250A\n  print(a\n@@ -126,18 +126,22 @@\n (array2)\n-%0A%0A\n+%250A%250A\n  leng = \n@@ -151,17 +151,19 @@\n (array2)\n-%0A\n+%250A\n  print(l\n@@ -166,18 +166,22 @@\n nt(leng)\n-%0A%0A\n+%250A%250A\n  counter\n@@ -184,17 +184,19 @@\n nter = 0\n-%0A\n+%250A\n  for ite\n@@ -207,17 +207,19 @@\n  array2:\n-%0A\n+%250A\n      cou\n@@ -227,17 +227,19 @@\n ter += 1\n-%0A\n+%250A\n  print(c\n@@ -245,18 +245,22 @@\n counter)\n-%0A%0A\n+%250A%250A\n  array.a\n@@ -267,17 +267,19 @@\n ppend(1)\n-%0A\n+%250A\n  print(a\n@@ -283,17 +283,19 @@\n t(array)\n-%0A\n+%250A\n  array.i\n@@ -323,10 +323,20 @@\n posi\n-%C3%A7%C3%A3\n+%25C3%25A7%25C3%25A3\n o es\n@@ -343,17 +343,19 @@\n pecifica\n-%0A\n+%250A\n  print(a\n@@ -359,18 +359,22 @@\n t(array)\n-%0A%0A\n+%250A%250A\n  juncao_\n@@ -395,17 +395,19 @@\n + array2\n-%0A\n+%250A\n  juncao_\n@@ -418,17 +418,19 @@\n y.pop(1)\n-%0A\n+%250A\n  juncao_\n@@ -441,17 +441,19 @@\n y.pop(0)\n-%0A\n+%250A\n  juncao_\n@@ -470,17 +470,19 @@\n rt(0, 3)\n-%0A\n+%250A\n  print(j\n@@ -493,18 +493,22 @@\n o_array)\n-%0A%0A\n+%250A%250A\n  arrayge\n@@ -512,17 +512,19 @@\n ygens = \n-%5B\n+%255B\n 'ametist\n@@ -545,17 +545,19 @@\n 'perola'\n-%0A\n+%250A\n  ,'steve\n@@ -562,12 +562,18 @@\n ven'\n-%0A %5D%0A\n+%250A %255D%250A\n  arr\n@@ -602,17 +602,19 @@\n azulli')\n-%0A\n+%250A\n  gem_rem\n@@ -634,12 +634,18 @@\n gens\n-%5B0%5D%0A\n+%255B0%255D%250A\n  arr\n@@ -669,17 +669,19 @@\n etista')\n-%0A\n+%250A\n  print(g\n@@ -696,17 +696,19 @@\n ida)\n-%0A\n+%250A\n  print('\n %5B ' \n@@ -703,17 +703,19 @@\n  print('\n-%5B\n+%255B\n  ' + ' '\n@@ -739,21 +739,29 @@\n + ' \n-%5D')%0A%0A\n+%255D')%250A%250A\n  n = 10\n-%0A\n+%250A\n  lis\n@@ -783,17 +783,19 @@\n (1 + n))\n-%0A\n+%250A\n  pint(li\n@@ -802,18 +802,24 @@\n sta)\n-%0A%0A\n+%250A%250A\n  n = 10\n-%0A\n+%250A\n  lis\n@@ -815,33 +815,35 @@\n = 10%250A lista = \n-%5B\n+%255B\n item for item in\n@@ -853,18 +853,22 @@\n nge(n+1)\n-%5D%0A\n+%255D%250A\n  print(l\n@@ -872,18 +872,22 @@\n t(lista)\n-%0A%0A\n+%250A%250A\n  lista =\n@@ -887,17 +887,19 @@\n lista = \n-%5B\n+%255B\n item for\n@@ -930,25 +930,31 @@\n f item %25\n+25\n  2 == 0\n-%5D%0A\n+%255D%250A\n  print(l\n@@ -962,11 +962,17 @@\n sta)\n-%0A%0A%0A\n+%250A%250A%250A\n  arr\n@@ -977,33 +977,35 @@\n rrayaleatorio = \n-%5B\n+%255B\n random.randint(0\n@@ -1029,17 +1029,19 @@\n ange(10)\n-%5D\n+%255D\n  # _ pla\n@@ -1048,17 +1048,19 @@\n ceholder\n-%0A\n+%250A\n  print(a\n@@ -1073,17 +1073,19 @@\n eatorio)\n-%0A\n+%250A\n  print(a\n@@ -1101,14 +1101,22 @@\n orio\n-%5B2%5D)%0A%0A\n+%255B2%255D)%250A%250A\n  for\n@@ -1154,17 +1154,19 @@\n atorio):\n-%0A\n+%250A\n      pri\n@@ -1182,11 +1182,15 @@\n ce: \n-%7Bi%7D\n+%257Bi%257D\n , va\n@@ -1198,19 +1198,27 @@\n or: \n-%7B\n+%257B\n valor\n-%7D')%0A%0A\n+%257D')%250A%250A\n  arr\n@@ -1231,17 +1231,19 @@\n torio = \n-%5B\n+%255B\n random.r\n@@ -1286,17 +1286,23 @@\n  _ %25\n+25\n  2 == 0\n-%5D%0A\n+%255D%250A\n prin\n@@ -1318,18 +1318,22 @@\n eatorio)\n-%0A%0A\n+%250A%250A\n class Fo\n@@ -1334,17 +1334,19 @@\n ass Foo:\n-%0A\n+%250A\n     def \n@@ -1368,17 +1368,19 @@\n x: int):\n-%0A\n+%250A\n         \n@@ -1389,17 +1389,19 @@\n lf.x = x\n-%0A\n+%250A\n     def \n@@ -1414,17 +1414,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -1441,19 +1441,27 @@\n 'Foo\n-%7B\n+%257B\n self.x\n-%7D'%0A%0A\n+%257D'%250A%250A\n list\n@@ -1477,19 +1477,29 @@\n list\n-%5Bint%5D = %5B%5D%0A\n+%255Bint%255D = %255B%255D%250A\n list\n@@ -1520,17 +1520,23 @@\n list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 1, 3\n@@ -1541,18 +1541,22 @@\n  3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_pr\n@@ -1580,17 +1580,23 @@\n list\n-%5BFoo%5D = %5B\n+%255BFoo%255D = %255B\n Foo(\n@@ -1633,11 +1633,17 @@\n o(5)\n-%5D%0A%0A\n+%255D%250A%250A\n list\n@@ -1659,17 +1659,19 @@\n ppend(1)\n-%0A\n+%250A\n lista_pr\n@@ -1693,17 +1693,19 @@\n (Foo(4))\n-%0A\n+%250A\n print(li\n@@ -1715,12 +1715,79 @@\n _preenchida)\n+%0A+@@ -1486,17 +1486,17 @@%250A end(Foo(%250A-4%250A+6%250A ))%25250Aprint%250A%0A\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-07_07-27-44",
+            "content": "@@ -7,16 +7,17 @@\n  random%0A\n+ \n array: l\n@@ -30,16 +30,17 @@\n t%5D = %5B%5D%0A\n+ \n array2 =\n@@ -56,16 +56,17 @@\n , 4, 5%5D%0A\n+ \n print(ar\n@@ -70,16 +70,17 @@\n (array)%0A\n+ \n print(ar\n@@ -86,16 +86,17 @@\n rray2)%0A%0A\n+ \n leng = l\n@@ -106,16 +106,17 @@\n array2)%0A\n+ \n print(le\n@@ -120,16 +120,17 @@\n (leng)%0A%0A\n+ \n counter \n@@ -133,16 +133,17 @@\n ter = 0%0A\n+ \n for item\n@@ -154,16 +154,17 @@\n array2:%0A\n+ \n     coun\n@@ -172,16 +172,17 @@\n er += 1%0A\n+ \n print(co\n@@ -189,16 +189,17 @@\n unter)%0A%0A\n+ \n array.ap\n@@ -206,16 +206,17 @@\n pend(1)%0A\n+ \n print(ar\n@@ -220,16 +220,17 @@\n (array)%0A\n+ \n array.in\n@@ -268,16 +268,17 @@\n ecifica%0A\n+ \n print(ar\n@@ -283,16 +283,17 @@\n array)%0A%0A\n+ \n juncao_a\n@@ -314,16 +314,17 @@\n  array2%0A\n+ \n juncao_a\n@@ -335,16 +335,17 @@\n .pop(1)%0A\n+ \n juncao_a\n@@ -356,16 +356,17 @@\n .pop(0)%0A\n+ \n juncao_a\n@@ -383,16 +383,17 @@\n t(0, 3)%0A\n+ \n print(ju\n@@ -405,16 +405,17 @@\n array)%0A%0A\n+ \n arraygen\n@@ -450,16 +450,17 @@\n perola'%0A\n+ \n ,'steven\n@@ -461,18 +461,20 @@\n steven'%0A\n+ \n %5D%0A\n+ \n arraygen\n@@ -499,16 +499,17 @@\n zulli')%0A\n+ \n gem_remo\n@@ -528,16 +528,17 @@\n gens%5B0%5D%0A\n+ \n arraygen\n@@ -558,16 +558,17 @@\n tista')%0A\n+ \n print(ge\n@@ -579,16 +579,17 @@\n movida)%0A\n+ \n print('%5B\n@@ -622,23 +622,25 @@\n  ' %5D')%0A%0A\n+ \n n = 10%0A\n+ \n lista = \n@@ -658,18 +658,18 @@\n 1 + n))%0A\n+ \n p\n-r\n int(list\n@@ -671,23 +671,26 @@\n (lista)%0A\n+%0A \n n = 10%0A\n+ \n lista = \n@@ -719,16 +719,17 @@\n e(n+1)%5D%0A\n+ \n print(li\n@@ -733,16 +733,18 @@\n (lista)%0A\n+%0A \n lista = \n@@ -789,24 +789,25 @@\n m %25 2 == 0%5D%0A\n+ \n print(lista)\n@@ -809,16 +809,17 @@\n ista)%0A%0A%0A\n+ \n arrayale\n@@ -887,16 +887,17 @@\n eholder%0A\n+ \n print(ar\n@@ -910,16 +910,17 @@\n atorio)%0A\n+ \n print(ar\n@@ -936,16 +936,18 @@\n rio%5B2%5D)%0A\n+%0A \n for i, v\n@@ -985,16 +985,17 @@\n o):%0A    \n+ \n print(f'\n@@ -1025,16 +1025,17 @@\n lor%7D')%0A%0A\n+ \n arrayale\n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-11-07_07-28-29",
+            "content": "@@ -1199,62 +1199,8 @@\n .x%7D'\n-%0A    def __repr__(self):%0A        return self.__str__()\n %0A%0Ali\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-07_07-32-03",
+            "content": "import random\narray: list[int] = []\narray2 = [1, 2, 3, 4, 5]\nprint(array)\nprint(array2)\n\nleng = len(array2)\nprint(leng)\n\ncounter = 0\nfor item in array2:\n    counter += 1\nprint(counter)\n\narray.append(1)\nprint(array)\narray.insert(0, 2) # insere posi\u00e7\u00e3o especifica\nprint(array)\n\njuncao_array = array + array2\njuncao_array.pop(1)\njuncao_array.pop(0)\njuncao_array.insert(0, 3)\nprint(juncao_array)\n\narraygens = ['ametista', 'garnet', 'perola'\n,'steven'\n]\narraygens.append('lapis lazulli')\ngem_removida = arraygens[0]\narraygens.remove('ametista')\nprint(gem_removida)\nprint('[ ' + ' '.join(arraygens) + ' ]')\n\nn = 10\nlista = list(range(1 + n))\nprint(lista)\nn = 10\nlista = [item for item in range(n+1)]\nprint(lista)\nlista = [item for item in range(10 + 1) if item % 2 == 0]\nprint(lista)\n\n\narrayaleatorio = [random.randint(0, 100) for _ in range(10)] # _ placeholder\nprint(arrayaleatorio)\nprint(arrayaleatorio[2])\nfor i, valor in enumerate(arrayaleatorio):\n    print(f'indice: {i}, valor: {valor}')\n\narrayaleatorio = [random.randint(0, 100) for _ in range(10) if _ % 2 == 0]\nprint(arrayaleatorio)\n\nclass Foo:\n    def __init__(self, x: int):\n        self.x = x\n    def __str__(self):\n        return f'Foo{self.x}'\n    def __repr__(self):\n        return self.__str__()\n\nlista_vazia: list[int] = []\nlista_preenchida: list[int] = [1, 3, 4, 5]\nlista_preencida_objetos: list[Foo] = [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(1)\nlista_preenchida.append(Foo(4))\nprint(lista_preenchida)",
+            "lines": "68"
         }
     ]
 }
