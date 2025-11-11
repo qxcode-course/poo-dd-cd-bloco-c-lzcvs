@@ -52,3 +52,5 @@
 2025-11-07 07:34:12, MOVE, v:1, k:poo@budega, mode:PICK
 2025-11-07 07:34:13, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:0
 2025-11-07 07:34:25, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-07 07:48:48, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-07 07:48:49, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:14

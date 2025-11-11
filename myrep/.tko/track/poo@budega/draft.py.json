@@ -2,8 +2,293 @@
     "patches": [
         {
             "label": "2025-11-07_07-34-13",
-            "content": "",
+            "content": "@@ -1,275 +0,0 @@\n-class Person:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    @property%0A    def nome(self) -%3E str:%0A        return self.__nome%0A%0A    @nome.setter    %0A    def nome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22%22\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-07_07-48-49",
+            "content": "@@ -5,12 +5,12 @@\n s Pe\n-ssoa\n+rson\n :%0A  \n@@ -271,198 +271,5 @@\n n f%22\n-nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    \n+%22\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-11_15-45-21",
+            "content": "@@ -465,184 +465,4 @@\n     \n-%0A%0A%0Adef main():%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0Amain()\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-11_15-47-45",
+            "content": "@@ -1,473 +1,36 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    @property%0A    def nome(self) -%3E str:%0A        return self.__nome%0A%0A    @nome.setter    %0A    def nome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A\n+@@ -466,118 +466,21 @@%0A    %250A%0A-\n     \n@@ -52,15 +52,19 @@\n f) -\n-%3E\n+%253E\n  str:\n-%0A\n+%250A\n     \n@@ -84,17 +84,19 @@\n Caixas: \n-%5B\n+%255B\n self.__c\n@@ -104,12 +104,18 @@\n ixas\n-%5D'%0A%0A\n+%255D'%250A%250A\n def \n@@ -121,17 +121,19 @@\n  main():\n-%0A\n+%250A\n     merc\n@@ -154,167 +154,65 @@\n  ')%0A\n-    while True:%0A        linha = input\n++%250A%250Adef main\n ()\n+:\n %0A \n-       args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A\n+%250A   %0A@@ -639,67 +639,8 @@%0A eak%250A%0A-\n     \n@@ -228,11 +228,15 @@\n args\n-%5B0%5D\n+%255B0%255D\n  == \n@@ -242,17 +242,19 @@\n  'show':\n-%0A\n+%250A\n         \n@@ -275,11 +275,14 @@\n ado)\n-%0A\n+%250A%0A \n main\n-()\n+%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-11_15-53-51",
+            "content": "@@ -568,16 +568,19 @@\n  Market(\n+' '\n )%0A    wh\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_15-53-52",
+            "content": "@@ -572,9 +572,8 @@\n ket(\n-3\n )%0A  \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_15-53-57",
+            "content": "@@ -509,16 +509,25 @@\n eturn f'\n+Caixas: %5B\n self.__c\n@@ -531,16 +531,17 @@\n __caixas\n+%5D\n '%0A%0Adef m\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_15-54-15",
+            "content": "@@ -507,16 +507,33 @@\n  return \n+f'self.__caixas'%0A\n %0Adef mai\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_15-54-49",
+            "content": "@@ -511,26 +511,8 @@\n urn \n-f'%7Bself.__caixas%7D'\n %0Adef\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-54-50",
+            "content": "@@ -559,19 +559,17 @@\n  Market(\n-' '\n+3\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-04",
+            "content": "@@ -364,20 +364,22 @@\n aixas = \n-None\n+caixas\n %0A       \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-04",
+            "content": "@@ -364,18 +364,20 @@\n aixas = \n-%5B%5D\n+None\n %0A       \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-07",
+            "content": "@@ -364,16 +364,18 @@\n aixas = \n+%5B%5D\n %0A       \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-14",
+            "content": "@@ -364,22 +364,16 @@\n aixas = \n-caixas\n %0A       \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-15",
+            "content": "@@ -559,16 +559,19 @@\n  Market(\n+' '\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-22",
+            "content": "@@ -559,17 +559,16 @@\n  Market(\n-_\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-27",
+            "content": "@@ -563,9 +563,9 @@\n ket(\n-3\n+_\n )%0A  \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_15-55-30",
+            "content": "@@ -74,24 +74,33 @@\n me%0A    %0A    \n+@property\n %0A    def get\n@@ -100,11 +100,8 @@\n def \n-get\n nome\n@@ -143,24 +143,36 @@\n __nome%0A%0A    \n+@nome.setter\n     %0A    def\n@@ -172,19 +172,16 @@\n     def \n-set\n nome(sel\n@@ -320,24 +320,37 @@\n _init__(self\n+, caixas: int\n ):%0A        s\n@@ -517,22 +517,22 @@\n %7Bself.__\n-espera\n+caixas\n %7D'%0Adef m\n@@ -559,19 +559,17 @@\n  Market(\n-' '\n+3\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-00-42",
+            "content": "@@ -531,16 +531,19 @@\n  Market(\n+' '\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-00-47",
+            "content": "@@ -1,777 +1,50 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A    def __str__(self) -%3E str:%0A        return f'%7Bself.__espera%7D'%0Adef main():%0A    mercado = Market()%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0Amain()\n+@@ -313,21 +313,8 @@%0A self%0A-, caixas: int%0A ):%250A %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-11_16-01-04",
+            "content": "@@ -544,19 +544,16 @@\n  Market(\n-' '\n )%0A    wh\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-01-05",
+            "content": "@@ -1,775 +1,35 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A    def __str__(self) -%3E str:%0A        return f'%7Bself.__espera%7D'%0Adef main():%0A    mercado = Market(' ')%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0Amain()\n+@@ -368,9 +368,8 @@%0A     %0A-#%0A self%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-11_16-01-39",
+            "content": "@@ -543,9 +543,11 @@\n ket(\n-3\n+' '\n )%0A  \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-01-45",
+            "content": "@@ -543,9 +543,9 @@\n ket(\n-1\n+3\n )%0A  \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-01-52",
+            "content": "@@ -476,88 +476,8 @@\n tr:%0A\n-        if self.__espera is None%0A            return f'Caixas: %5B-----%5D, %5B-----%5D'%0A\n     \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-03-00",
+            "content": "@@ -504,17 +504,16 @@\n  is None\n-:\n %0A       \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-03-13",
+            "content": "@@ -553,16 +553,50 @@\n -----%5D'%0A\n+        return f'%7Bself.__espera%7D'%0A\n def main\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-03-21",
+            "content": "@@ -497,18 +497,18 @@\n _espera \n-==\n+is\n  None:%0A \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-03-43",
+            "content": "@@ -464,32 +464,70 @@\n _(self) -%3E str:%0A\n+        if self.__espera == None:%0A    \n         return f\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-04-07",
+            "content": "@@ -503,18 +503,20 @@\n : %5B-----\n+%5D\n , \n+%5B\n -----%5D'%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-04-18",
+            "content": "@@ -517,37 +517,8 @@\n -%5D'%0A\n-        return f'Espera: %5B%5D'%0A\n def \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-04-40",
+            "content": "@@ -512,17 +512,33 @@\n  -----%5D'\n- \n+%0A        return f\n 'Espera:\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-04-52",
+            "content": "@@ -517,10 +517,8 @@\n -%5D' \n-%5Cn\n 'Esp\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-04-58",
+            "content": "@@ -515,10 +515,13 @@\n ---%5D\n+' \n %5Cn\n+'\n Espe\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-05-06",
+            "content": "@@ -476,59 +476,8 @@\n tr:%0A\n-        caixas = map(self.__caixas, self.__espera)%0A\n     \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-11_16-07-58",
+            "content": "@@ -544,16 +544,30 @@\n n f'\n-%7Bc\n+C\n aixas\n-%7D\n+: %5B-----, -----%5D\n %5CnEs\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-08-12",
+            "content": "@@ -1,835 +1,87 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A    def __str__(self) -%3E str:%0A        caixas = list(map(self.__caixas, self.__espera))%0A        return f'%7Bcaixas%7D%5CnEspera: %5B%5D'%0Adef main():%0A    mercado = Market(1)%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0Amain()\n+@@ -493,13 +493,8 @@%0A s = %0A-list(%0A map(%0A@@ -522,17 +522,16 @@%0A _espera)%0A-)%0A %250A       %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-11_16-08-57",
+            "content": "@@ -490,9 +490,8 @@\n ixas\n-3\n  = l\n@@ -547,16 +547,22 @@\n turn f'%7B\n+caixas\n %7D%5CnEsper\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-09-08",
+            "content": "@@ -1,832 +1,57 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A    def __str__(self) -%3E str:%0A        caixas3 = list(map(self.__caixas, self.__espera))%0A        return f'%7B3%7D%5CnEspera: %5B%5D'%0Adef main():%0A    mercado = Market('')%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0Amain()\n+@@ -548,23 +548,16 @@%0A turn f'%257B%0A-caixas3%0A %257D%255CnEsper%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-11_16-09-20",
+            "content": "@@ -548,22 +548,16 @@\n turn f'%7B\n-caixas\n 3%7D%5CnEspe\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-09-25",
+            "content": "@@ -603,16 +603,18 @@\n  Market(\n+''\n )%0A    wh\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-09-30",
+            "content": "@@ -603,17 +603,16 @@\n  Market(\n-0\n )%0A    wh\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-09-34",
+            "content": "@@ -476,24 +476,73 @@\n tr:%0A        \n+caixas3 = list(map(self.__caixas, self.__espera))\n %0A        ret\n@@ -548,29 +548,23 @@\n turn f'%7B\n-self.__\n caixas\n+3\n %7D%5CnEsper\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-12-45",
+            "content": "@@ -560,16 +560,17 @@\n  Market(\n+0\n )%0A    wh\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-13-00",
+            "content": "@@ -321,13 +321,8 @@\n ixas\n-: int\n ):%0A \n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_16-13-09",
+            "content": "@@ -1,775 +1,71 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A    %0A    def __str__(self) -%3E str:%0A        %0A        return f'%7Bself.__caixas%7D%5CnEspera: %5B%5D'%0Adef main():%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0Amain()\n+@@ -544,16 +544,39 @@%0A main():%250A%0A+    mercado = Market()%250A%0A     whil%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-11_16-13-19",
+            "content": "@@ -1,803 +1,167 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas = caixas%0A        self.__espera = %5BNone for _ in range(caixas)%5D%0A        self.__fila_espera = %5B%5D%0A%0A    def __str__(self) -%3E str:%0A        %0A        return f'%7Bself.__caixas%7D%5CnEspera: %5B%5D'%0Adef main():%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        mercado = Market(args%5B0%5D)%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0A\n+@@ -442,16 +442,20 @@%0A ra = %255B%255D%250A%0A+    %0A %250A    def%0A@@ -564,42 +564,8 @@%0A ue:%250A%0A-        mercado = Market(args%255B0%255D)%250A%0A     %0A@@ -766,21 +766,8 @@%0A do)%250A%0A-\n     \n@@ -172,11 +172,14 @@\n     \n-%0A\n+%250A%0A \n main\n-()\n+%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-11-11_16-14-28",
+            "content": "@@ -485,61 +485,9 @@\n     \n-mapeamento = list(map(self.__espera * self.__caixa))\n %0A\n+\n     \n@@ -544,32 +544,8 @@\n ():%0A\n-    mercado = Market(3)%0A\n     \n@@ -580,16 +580,16 @@\n input()%0A\n-\n         \n@@ -624,16 +624,50 @@\n it(' ')%0A\n+        mercado = Market(args%5B0%5D)%0A\n         \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-15-37",
+            "content": "@@ -516,17 +516,18 @@\n __espera\n-,\n+ *\n  self.__\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-15-45",
+            "content": "@@ -530,17 +530,16 @@\n .__caixa\n-s\n ))%0A     \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-15-52",
+            "content": "@@ -1,896 +1,50 @@\n-class Pessoa:%0A    def __init__(self, nome: str):%0A        self.__nome = nome%0A    %0A    %0A    def getnome(self) -%3E str:%0A        return self.__nome%0A%0A        %0A    def setnome(self, nome: str):%0A        self.__nome = nome%0A    %0A    def __str__(self):%0A        return f%22nome: %7Bself.__nome%7D%22%0A%0Aclass Market:%0A    def __init__(self, caixas: int):%0A        self.__caixas: list%5BPessoa %7C None%5D = %5B%5D%0A        self.__espera:list %5BPessoa %7C None%5D = %5B%5D%0A        self.__numerocaixas = caixas%0A    def __str__(self) -%3E str:%0A        retorno = map(lambda x: '----' if x is None else print(x), self.__caixa)%0A        return retorno%0A        #return f'%7Bself.__caixas%7D%5CnEspera: %5B%5D'%0Adef main():%0A%0A    while True:%0A        linha = input()%0A        args: linha%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(mercado)%0A            %0Amain()\n+@@ -613,17 +613,17 @@%0A  Market(%0A-0%0A+3%0A )%250A    wh%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-11_16-31-15",
+            "content": "@@ -655,31 +655,8 @@\n ():%0A\n-    mercado = Market(0)\n %0A   \n@@ -874,83 +874,8 @@\n do)%0A\n-        elif args%5B0%5D == 'init':%0A            mercado = Market(int(args%5B1%5D))%0A\n     \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-11_16-32-59",
+            "content": "@@ -567,17 +567,16 @@\n .__caixa\n-s\n )%0A      \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-11_16-33-11",
+            "content": "@@ -596,15 +596,8 @@\n orno\n-.join()\n %0A   \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-11_16-33-27",
+            "content": "@@ -589,20 +589,21 @@\n urn \n-join(\n retorno\n+.join(\n )%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-11_16-33-42",
+            "content": "@@ -510,13 +510,8 @@\n o = \n-list(\n map(\n@@ -569,18 +569,16 @@\n _caixas)\n-)%0A\n %0A       \n@@ -589,21 +589,20 @@\n urn \n+join(\n retorno\n-.join(\n )%0A  \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-11_16-34-21",
+            "content": "@@ -596,19 +596,21 @@\n urn \n-str(\n retorno\n+.join(\n )%0A  \n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-11-11_16-34-49",
+            "content": "class Pessoa:\n    def __init__(self, nome: str):\n        self.__nome = nome\n    \n    \n    def getnome(self) -> str:\n        return self.__nome\n\n        \n    def setnome(self, nome: str):\n        self.__nome = nome\n    \n    def __str__(self):\n        return f\"nome: {self.__nome}\"\n\nclass Market:\n    def __init__(self, caixas: int):\n        self.__caixas: list[Pessoa | None] = []\n        self.__espera:list [Pessoa | None] = []\n        self.__numerocaixas = caixas\n    def __str__(self) -> str:\n        retorno = list(map(lambda x: '----' if x is None else print(x), self.__caixas))\n\n        return str(retorno)\n        #return f'{self.__caixas}\\nEspera: []'\ndef main():\n    mercado = Market(0)\n    while True:\n        linha = input()\n        args: linha[str] = linha.split(' ')\n        print(f'$' + linha)\n        if args[0] == 'end':\n            break\n        elif args[0] == 'show':\n            print(mercado)\n        elif args[0] == 'init':\n            mercado = Market(int(args[1]))\n            \nmain()",
+            "lines": "39"
         }
     ]
 }
