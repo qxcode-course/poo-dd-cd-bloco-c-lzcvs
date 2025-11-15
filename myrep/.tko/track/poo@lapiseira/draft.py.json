@@ -97,8 +97,798 @@
         },
         {
             "label": "2025-11-15_09-17-22",
-            "content": "class Lapiseira:\n    def __init__(self, hardness: str, thickness: int, size: int):\n        self.__size = size\n        self.__thickness = thickness\n        self.__hardness = hardness\n    def usagepersheet(self):\n        if self.__hardness == 'HB':\n            self.__size -= 1\n        if self.__hardness == '2B':\n            self.__size -= 2\n        if self.__hardness == '4B':\n            self.__size -= 4\n        if self.__hardness == '6B':\n            self.__size -= 6\n    def setSize(self, novo_tamanho: int):\n        self.__size = novo_tamanho\n    def getthickness(self):\n        return self.__thickness\n    def gethardness(self):\n        return self.__hardness\n    def getsize(self):\n        return self.__size\n    def __str__(self):\n        return f\"[{self.__size}:{self.__hardness}:{self.__thickness}]\"\nclass Grafite:\n    def __init__(self, calibre: int):\n        self.__calibre = calibre\n        self.__bico: Lapiseira | None = []\n        self.__tambor: list[grafite] = []\n\n    def insert(self, grafite: Lapiseira) -> bool:\n        if grafite.getthickness() != self.__calibre:\n            print('fail: calibre incompat\u00edvel')\n            return False\n        if grafite.getthickness() == self.__calibre:\n            self.__tambor = grafite\n        self.__calibre = grafite\n        return True\n\n    def __str__(self) -> str:\n        return f\"calibre: {self.__calibre}, bico: {self.__bico}, tambor: <{self.__tambor}>\"\n\ndef main():\n    polis = Grafite(' ')\n    while True:\n        linha: str = input()\n        args: list[str] = linha.split(' ')\n        print(f'$' + linha)\n\n        if args[0] == 'end':\n            break\n        elif args[0] == 'init':\n            calibre = float(args[1])\n            polis = Grafite(calibre)\n        elif args[0] == 'show':\n            print(polis)\n        elif args[0] == 'insert':\n            thickness = float(args[1])\n            hardness = args[2]\n            size = int(args[3])\n            graf = Lapiseira(thickness, hardness, size)\n            polis.insert(graf)\nmain()",
+            "content": "@@ -1328,17 +1328,8 @@\n tr:%0A\n-        %0A\n     \n@@ -1398,16 +1398,31 @@\n ambor: %3C\n+%7Bself.__tambor%7D\n %3E%22%0A%0Adef \n",
             "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-32-47",
+            "content": "@@ -1163,22 +1163,88 @@\n     \n-print(\n+if grafite.getthickness() == self.__calibre:%0A            self.__tambor = \n grafite\n-)\n %0A   \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_15-33-33",
+            "content": "@@ -1165,29 +1165,22 @@\n   print(\n-self.__calibr\n+grafit\n e)%0A     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-33-50",
+            "content": "@@ -1151,16 +1151,46 @@\n n False%0A\n+        print(self.__calibre)%0A\n         \n@@ -1912,32 +1912,8 @@\n ze)%0A\n-            print(graf)%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-34-08",
+            "content": "@@ -68,32 +68,59 @@\n nt, size: int):%0A\n+        self.__size = size%0A\n         self.__t\n@@ -179,35 +179,8 @@\n ess%0A\n-        self.__size = size%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-35-29",
+            "content": "@@ -1855,23 +1855,23 @@\n ira(\n-hard\n+thick\n ness, \n-thick\n+hard\n ness\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-35-46",
+            "content": "@@ -1855,14 +1855,8 @@\n ira(\n-size, \n hard\n@@ -1870,16 +1870,22 @@\n hickness\n+, size\n )%0A      \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-36-02",
+            "content": "@@ -1878,16 +1878,40 @@\n ckness)%0A\n+            print(graf)%0A\n         \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-36-08",
+            "content": "@@ -893,38 +893,8 @@\n bre%0A\n-        self.__grafite = None%0A\n     \n@@ -1166,22 +1166,22 @@\n  self.__\n-grafit\n+calibr\n e = graf\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_15-39-38",
+            "content": "@@ -1099,22 +1099,22 @@\n  self.__\n-grafit\n+calibr\n e:%0A     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-39-48",
+            "content": "@@ -1,1927 +1,156 @@\n-class Lapiseira:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__size -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setSize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass Grafite:%0A    def __init__(self, calibre: int):%0A        self.__calibre = calibre%0A        self.__bico: Lapiseira %7C None = %5B%5D%0A        self.__tambor: list%5Bgrafite%5D = %5B%5D%0A%0A    def insert(self, grafite: Lapiseira) -%3E bool:%0A        if grafite.getthickness() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            return False%0A        self.__tambor.append(grafite)%0A        return True%0A%0A    def __str__(self) -%3E str:%0A        %0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%3E%22%0A%0Adef main():%0A    polis = Grafite(' ')%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Grafite(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            size = int(args%5B3%5D)%0A            graf = Lapiseira(size, hardness, thickness)%0A            polis.insert(graf)%0Amain()\n+@@ -889,16 +889,46 @@%0A calibre%250A%0A+        self.__grafite = None%250A%0A         %0A@@ -1200,30 +1200,25 @@%0A f.__%0A-tambor.append(%0A+grafite = %0A grafite%0A-)%0A %250A   %0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-15_15-41-52",
+            "content": "@@ -1172,19 +1172,32 @@\n __tambor\n- = \n+.append(grafite)\n %0A       \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_15-42-40",
+            "content": "@@ -1175,23 +1175,16 @@\n ambor = \n-grafite\n %0A       \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_15-42-41",
+            "content": "@@ -1333,16 +1333,41 @@\n main():%0A\n+    polis = Grafite(' ')%0A\n     whil\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_15-42-59",
+            "content": "@@ -1337,33 +1337,8 @@\n ():%0A\n-    polis = Grafite(' ')%0A\n     \n@@ -1856,32 +1856,8 @@\n ss)%0A\n-            print(graf)%0A\n     \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-15_15-43-36",
+            "content": "@@ -1044,20 +1044,28 @@\n grafite.\n-size\n+getthickness\n () != se\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-44-38",
+            "content": "@@ -1044,19 +1044,16 @@\n grafite.\n-get\n size() !\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-44-52",
+            "content": "@@ -1888,9 +1888,8 @@\n     \n-#\n prin\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-45-01",
+            "content": "@@ -1316,23 +1316,8 @@\n r: %3C\n-%7Bself.__tambor%7D\n %3E%22%0A%0A\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-45-35",
+            "content": "@@ -1241,133 +1241,9 @@\n     \n-if self.__tambor is None:%0A            return f'calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%3E'%0A        else:%0A    \n+%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_15-47-11",
+            "content": "@@ -1258,44 +1258,17 @@\n bor \n-==\n+is\n  None:%0A\n-            replace = '%3C%3E'%0A\n     \n@@ -1275,33 +1275,33 @@\n         return f\n-%22\n+'\n calibre: %7Bself._\n@@ -1344,19 +1344,30 @@\n or: \n-%7Breplace%7D%22%0A\n+%3C%3E'%0A        else:%0A    \n     \n@@ -1435,16 +1435,17 @@\n tambor: \n+%3C\n %7Bself.__\n@@ -1451,16 +1451,17 @@\n _tambor%7D\n+%3E\n %22%0A%0Adef m\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-49-13",
+            "content": "@@ -1257,18 +1257,20 @@\n mbor == \n-%5B%5D\n+None\n :%0A      \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-49-27",
+            "content": "@@ -2006,23 +2006,23 @@\n ze, \n-thick\n+hard\n ness, \n-hard\n+thick\n ness\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-49-51",
+            "content": "@@ -2006,23 +2006,23 @@\n ze, \n-hard\n+thick\n ness, \n-thick\n+hard\n ness\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-50-09",
+            "content": "@@ -1449,17 +1449,16 @@\n tambor: \n-%3C\n %7Bself.__\n@@ -1464,17 +1464,16 @@\n _tambor%7D\n-%3E\n %22%0A%0Adef m\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-50-40",
+            "content": "@@ -2033,24 +2033,25 @@\n             \n+#\n print(graf)%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-51-21",
+            "content": "@@ -2008,23 +2008,23 @@\n ze, \n-thick\n+hard\n ness, \n-hard\n+thick\n ness\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-51-35",
+            "content": "@@ -1879,20 +1879,25 @@\n         \n-size\n+thickness\n  = float\n@@ -1953,27 +1953,27 @@\n     \n-thickness = \n+size = int(\n args%5B3%5D\n+)\n %0A   \n@@ -2008,23 +2008,23 @@\n ze, \n-hard\n+thick\n ness, \n-thick\n+hard\n ness\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-52-31",
+            "content": "@@ -1883,27 +1883,29 @@\n     \n-thickness = \n+size = float(\n args%5B1%5D\n+)\n %0A   \n@@ -1948,29 +1948,27 @@\n     \n-size = float(\n+thickness = \n args%5B3%5D\n-)\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-52-57",
+            "content": "@@ -1931,9 +1931,9 @@\n rgs%5B\n-3\n+2\n %5D%0A  \n@@ -1960,17 +1960,17 @@\n at(args%5B\n-2\n+3\n %5D)%0A     \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-53-50",
+            "content": "@@ -1951,16 +1951,17 @@\n ize = fl\n+o\n at(args%5B\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-54-01",
+            "content": "@@ -1949,16 +1949,20 @@\n  size = \n+flat\n (args%5B2%5D\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-54-03",
+            "content": "@@ -1891,22 +1891,16 @@\n kness = \n-float(\n args%5B1%5D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-54-22",
+            "content": "@@ -1896,33 +1896,32 @@\n  = float(args%5B1%5D\n-)\n %0A            har\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-54-23",
+            "content": "@@ -2037,10 +2037,8 @@\n     \n- #\n  pri\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-54-36",
+            "content": "@@ -977,83 +977,8 @@\n = %5B%5D\n-%0A        for _ in range(calibre):%0A            self.__tambor.append(calibre)\n %0A%0A  \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-56-00",
+            "content": "@@ -973,16 +973,91 @@\n te%5D = %5B%5D\n+%0A        for _ in range(calibre):%0A            self.__tambor.append(calibre)\n %0A%0A    de\n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-15_15-56-16",
+            "content": "@@ -1171,24 +1171,18 @@\n mbor\n-.append(\n+ = \n grafite\n-)\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-57-48",
+            "content": "@@ -912,15 +912,31 @@\n bico\n- = None\n+: Lapiseira %7C None = %5B%5D\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-58-25",
+            "content": "@@ -911,18 +911,20 @@\n _bico = \n-%5B%5D\n+None\n %0A       \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-58-32",
+            "content": "@@ -912,26 +912,8 @@\n bico\n-: Lapiseira %7C None\n  = %5B\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-58-39",
+            "content": "@@ -1168,22 +1168,22 @@\n _tambor.\n-insert\n+append\n (grafite\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_15-59-54",
+            "content": "@@ -1186,11 +1186,8 @@\n fite\n-, 1\n )%0A  \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-00-05",
+            "content": "@@ -1172,19 +1172,22 @@\n bor.\n-add\n+insert\n (grafite\n )%0A  \n@@ -1182,16 +1182,19 @@\n (grafite\n+, 1\n )%0A      \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-00-30",
+            "content": "@@ -1171,18 +1171,21 @@\n mbor\n- = \n+.add(\n grafite\n+)\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-01-30",
+            "content": "@@ -977,18 +977,8 @@\n = %5B%5D\n- * calibre\n %0A%0A  \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-03-01",
+            "content": "@@ -973,16 +973,26 @@\n te%5D = %5B%5D\n+ * calibre\n %0A%0A    de\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-03-07",
+            "content": "@@ -1,2144 +1,176 @@\n-class Lapiseira:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__size -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setSize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass Grafite:%0A    def __init__(self, calibre: float):%0A        self.__calibre = calibre%0A        self.__bico: Lapiseira %7C None = %5B%5D%0A        self.__tambor: list%5Bgrafite%5D = %5B%5D%0A        for _ in range(calibre):%0A            self.__tambor.append(calibre)%0A%0A    def insert(self, grafite: Lapiseira) -%3E bool:%0A        if grafite.getsize() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            return False%0A        self.__tambor = grafite%0A        return True%0A%0A    def __str__(self) -%3E str:%0A        if self.__tambor == %5B%5D:%0A            replace = '%3C%3E'%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Breplace%7D%22%0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%7Bself.__tambor%7D%3E%22%0A%0Adef main():%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Grafite(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B3%5D%0A            size = (args%5B2%5D)%0A            graf = Lapiseira(size, hardness, thickness)%0A            # print(graf)%0A            polis.insert(graf)%0Amain()\n+@@ -850,20 +850,18 @@%0A alibre: %0A-floa%0A+in%0A t):%250A    %0A@@ -977,83 +977,8 @@%0A = %255B%255D%0A-%250A        for _ in range(calibre):%250A            self.__tambor.append(calibre)%0A %250A%250A  %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-15_16-04-46",
+            "content": "@@ -1,2142 +1,54 @@\n-class Lapiseira:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__size -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setSize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass Grafite:%0A    def __init__(self, calibre: int):%0A        self.__calibre = calibre%0A        self.__bico: Lapiseira %7C None = %5B%5D%0A        self.__tambor: list%5Bgrafite%5D = %5B%5D%0A        for _ in range(calibre):%0A            self.__tambor.append(calibre)%0A%0A    def insert(self, grafite: Lapiseira) -%3E bool:%0A        if grafite.getsize() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            return False%0A        self.__tambor = grafite%0A        return True%0A%0A    def __str__(self) -%3E str:%0A        if self.__tambor == %5B%5D:%0A            replace = '%3C%3E'%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Breplace%7D%22%0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%7Bself.__tambor%7D%3E%22%0A%0Adef main():%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Grafite(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B3%5D%0A            size = (args%5B2%5D)%0A            graf = Lapiseira(size, hardness, thickness)%0A            # print(graf)%0A            polis.insert(graf)%0Amain()\n+@@ -850,18 +850,20 @@%0A alibre: %0A-in%0A+floa%0A t):%250A    %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-15_16-04-56",
+            "content": "@@ -982,16 +982,83 @@\n         \n+for _ in range(calibre):%0A            self.__tambor.append(calibre)%0A\n %0A    def\n@@ -1265,193 +1265,19 @@\n     \n-aux = grafites_list%0A        added_count = 0%0A        for grafite in grafites_list:%0A            if self.insert_single(grafite):%0A                added_count += 1%0A        return added_count\n+return True\n %0A%0A  \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_16-06-40",
+            "content": "@@ -1186,16 +1186,44 @@\n grafite%0A\n+        aux = grafites_list%0A\n         \n@@ -1261,29 +1261,29 @@\n fite in \n-self.__tambor\n+grafites_list\n :%0A      \n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-11-15_16-06-58",
+            "content": "@@ -1226,20 +1226,32 @@\n for \n-_ in \n grafite\n+ in self.__tambor\n :%0A  \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_16-07-18",
+            "content": "@@ -1227,29 +1227,23 @@\n or _ in \n-self.__tambor\n+grafite\n :%0A      \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_16-07-29",
+            "content": "@@ -1189,18 +1189,141 @@\n fite\n- + grafite\n+%0A        added_count = 0%0A        for _ in self.__tambor:%0A            if self.insert_single(grafite):%0A                added_count += 1\n %0A   \n@@ -1334,20 +1334,27 @@\n  return \n-True\n+added_count\n %0A%0A    de\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-15_16-07-56",
+            "content": "@@ -1189,72 +1189,18 @@\n fite\n-%0A        return True%0A    %0A    def insert_multiples(self,\n+ +\n  grafite\n _lis\n@@ -1199,15 +1199,8 @@\n fite\n-_list):\n %0A   \n@@ -1208,151 +1208,19 @@\n     \n-for grafite in grafite_list:%0A            if grafite.getsize() == self.__calibre:%0A                self.__tambor.append(grafite)%0A                \n+return True\n %0A%0A  \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-10-56",
+            "content": "@@ -2258,26 +2258,16 @@\n s.insert\n-_multiples\n (graf)%0Am\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-15_16-11-09",
+            "content": "@@ -1205,16 +1205,219 @@\n urn True\n+%0A    %0A    def insert_multiples(self, grafite_list):%0A        for grafite in grafite_list:%0A            if grafite.getsize() == self.__calibre:%0A                self.__tambor.append(grafite)%0A                \n %0A%0A    de\n@@ -2258,16 +2258,26 @@\n s.insert\n+_multiples\n (graf)%0Am\n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-15_16-11-36",
+            "content": "@@ -1179,24 +1179,18 @@\n mbor\n-.append(\n+ = \n grafite\n-)\n %0A   \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-13-28",
+            "content": "@@ -926,16 +926,18 @@\n a %7C None\n+ =\n  %5B%5D%0A    \n@@ -960,25 +960,23 @@\n r: list%5B\n-Lapiseira\n+grafite\n %5D = %5B%5D%0A \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-15-07",
+            "content": "@@ -926,18 +926,16 @@\n a %7C None\n- =\n  %5B%5D%0A    \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-15-12",
+            "content": "@@ -1160,20 +1160,8 @@\n lse%0A\n-        gra%0A\n     \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-15-53",
+            "content": "@@ -1171,19 +1171,8 @@\n  gra\n-f = grafite\n %0A   \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-15-54",
+            "content": "@@ -1,818 +1,184 @@\n+@@ -1,21 +1,23 @@%0A \n class \n+%0A-\n Grafite\n-:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__size -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setSize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass \n+%0A+Lapiseira%0A :%250A    de%0A@@ -805,33 +805,31 @@%0A ss%257D%255D%2522%250Aclass %0A-Lapiseira%0A+Grafite%0A :%250A    def __%0A@@ -910,23 +910,25 @@%0A __bico: %0A-Grafite%0A+\n Lapi\n@@ -186,351 +186,138 @@\n eira\n-:\n %0A  \n-  def __init__(self, calibre: int):%0A        self.__calibre = calibre%0A        self.__bico: Grafite %7C None = %5B%5D%0A        self.__tambo\n+%257C None %0A@@ -960,23 +960,25 @@%0A \n r: list\n-%5B\n+%255B%0A-\n Grafite\n-%5D = %5B%5D%0A        %0A    def insert(self, grafite: Grafite) -%3E bool:%0A        if grafite.getsize() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            retur\n+%0A+Lapiseira%0A %255D = %255B%255D%250A %0A@@ -1156,17 +1156,39 @@%0A \n n False\n-%0A%0A\n+%250A%0A+\n         \n self\n@@ -316,914 +316,100 @@\n     \n-self.__tambor.append(grafite)%0A        return True%0A%0A    def __str__(self) -%3E str:%0A        if self.__tambor == %5B%5D:%0A            replace = '%3C%3E'%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Breplace%7D%22%0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%7Bself.__tambor%7D%3E%22%0A%0Adef main():%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Grafite(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B3%5D%0A            size = (args%5B2%5D)%0A            graf = Grafite(size, hardness, thickness)%0A            # print(graf)%0A            polis.insert(graf)%0Amain()\n+graf = grafite%0A %250A%0A-%0A         %0A@@ -1999,23 +1999,25 @@%0A  graf = %0A-Grafite%0A+Lapiseira%0A (size, h%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-15_16-17-23",
+            "content": "@@ -1745,25 +1745,23 @@\n polis = \n-Lapiseira\n+Grafite\n (calibre\n@@ -1971,25 +1971,23 @@\n  graf = \n-Lapiseira\n+Grafite\n (size, h\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-17-39",
+            "content": "@@ -1973,23 +1973,25 @@\n  graf = \n-Grafite\n+Lapiseira\n (size, h\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-18-14",
+            "content": "@@ -1,2080 +1,132 @@\n-class Grafite:%0A    def __init__(self, hardness: str, thickness: int, size: int):%0A        self.__thickness = thickness%0A        self.__hardness = hardness%0A        self.__size = size%0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__size -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setSize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass Lapiseira:%0A    def __init__(self, calibre: int):%0A        self.__calibre = calibre%0A        self.__bico: Grafite %7C None = %5B%5D%0A        self.__tambor: list%5BGrafite%5D = %5B%5D%0A        %0A    def insert(self, grafite: Lapiseira) -%3E bool:%0A        if grafite.getsize() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            return False%0A%0A        self.__tambor.append(grafite)%0A        return True%0A%0A    def __str__(self) -%3E str:%0A        if self.__tambor == %5B%5D:%0A            replace = '%3C%3E'%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Breplace%7D%22%0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %3C%7Bself.__tambor%7D%3E%22%0A%0Adef main():%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Lapiseira(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B3%5D%0A            size = (args%5B2%5D)%0A            graf = Grafite(size, hardness, thickness)%0A            # print(graf)%0A            polis.insert(graf)%0Amain()\n+@@ -1011,25 +1011,23 @@%0A rafite: %0A-Lapiseira%0A+Grafite%0A ) -%253E boo%0A@@ -1180,25 +1180,23 @@%0A .append(%0A-Lapiseira%0A+grafite%0A )%250A      %0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2025-11-15_16-19-15",
+            "content": "@@ -1011,23 +1011,25 @@\n rafite: \n-Grafite\n+Lapiseira\n ) -%3E boo\n@@ -1053,25 +1053,20 @@\n fite.get\n-thickness\n+size\n () != se\n@@ -1152,16 +1152,17 @@\n n False%0A\n+%0A\n         \n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-15_16-20-58",
+            "content": "@@ -1051,20 +1051,25 @@\n fite.get\n-size\n+thickness\n () != se\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-21-10",
+            "content": "@@ -931,52 +931,10 @@\n e = \n-None  # Corre%C3%A7%C3%A3o: None em vez de lista vazia\n+%5B%5D\n %0A   \n@@ -976,17 +976,21 @@\n  %5B%5D%0A    \n+    \n %0A\n-\n     def \n@@ -1051,25 +1051,20 @@\n fite.get\n-thickness\n+size\n () != se\n@@ -1080,41 +1080,8 @@\n bre:\n-  # Corre%C3%A7%C3%A3o: thickness, n%C3%A3o size\n %0A   \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-21-40",
+            "content": "@@ -927,18 +927,20 @@\n  None = \n-%5B%5D\n+None\n   # Corr\n@@ -1089,20 +1089,25 @@\n fite.get\n-size\n+thickness\n () != se\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-21-53",
+            "content": "@@ -925,24 +925,64 @@\n  %7C None = %5B%5D\n+  # Corre%C3%A7%C3%A3o: None em vez de lista vazia\n %0A        sel\n@@ -1112,16 +1112,49 @@\n calibre:\n+  # Corre%C3%A7%C3%A3o: thickness, n%C3%A3o size\n %0A       \n@@ -1530,20 +1530,29 @@\n mbor: %3C%7B\n-graf\n+self.__tambor\n %7D%3E%22%0A%0Adef\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-23-01",
+            "content": "@@ -1461,19 +1461,16 @@\n : %3C%7Bgraf\n-ite\n %7D%3E%22%0A%0Adef\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-23-01",
+            "content": "@@ -1247,145 +1247,145 @@\n     \n-bico_str = str(self.__bico) if self.__bico else %22%5B%5D%22%0A        tambor_str = %22%5B%22 + %22, %22.join(str(grafite) for grafite in self.__tambor) + %22%5D\n+if self.__tambor == %5B%5D:%0A            replace = '%3C%3E'%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Breplace%7D\n %22%0A  \n@@ -1437,39 +1437,41 @@\n o: %7B\n-bico_str%7D, tambor: %7Btambor_str%7D\n+self.__bico%7D, tambor: %3C%7Bgrafite%7D%3E\n %22%0A%0Ad\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_16-23-18",
+            "content": "@@ -927,20 +927,18 @@\n  None = \n-None\n+%5B%5D\n %0A       \n@@ -1322,17 +1322,17 @@\n  = %22\n-%3C\n+%5B\n %22 + \n-', '\n+%22, %22\n .joi\n@@ -1379,17 +1379,17 @@\n bor) + %22\n-%3E\n+%5D\n %22%0A      \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-26-58",
+            "content": "@@ -1291,21 +1291,8 @@\n bico\n- is None %22%5B%5D%22\n  els\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-27-40",
+            "content": "@@ -1306,27 +1306,20 @@\n %5D%22 else \n-self.__bico\n+%22%5B%5D%22\n %0A       \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-27-40",
+            "content": "@@ -927,18 +927,20 @@\n  None = \n-%5B%5D\n+None\n %0A       \n@@ -1292,17 +1292,37 @@\n ico \n-else %22%5B%5D%22\n+is None %22%5B%5D%22 else self.__bico\n %0A   \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-28-09",
+            "content": "@@ -1324,16 +1324,17 @@\n  %22%3C%22 + '\n+,\n  '.join(\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-28-17",
+            "content": "@@ -1324,16 +1324,17 @@\n  %22%3C%22 + '\n+ \n '.join(s\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-28-24",
+            "content": "@@ -1235,16 +1235,77 @@\n -%3E str:%0A\n+        bico_str = str(self.__bico) if self.__bico else %22%5B%5D%22%0A\n         \n@@ -1431,27 +1431,24 @@\n  bico: %7B\n-self.__\n bico\n+_str\n %7D, tambo\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-15_16-28-57",
+            "content": "@@ -1209,99 +1209,8 @@\n ue%0A%0A\n-    def pull(self) -%3E bool:%0A        self.__bico = self.__tambor.pop(0)%0A        return True%0A\n     \n@@ -1996,65 +1996,8 @@\n af)%0A\n-        elif args%5B0%5D == 'pull':%0A            polis.pull()%0A\n main\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-15_16-32-52",
+            "content": "@@ -1237,122 +1237,8 @@\n ol:%0A\n-        if self.__bico is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return False%0A\n     \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-15_16-36-31",
+            "content": "@@ -927,20 +927,18 @@\n  None = \n-None\n+%5B%5D\n %0A       \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-15_16-36-50",
+            "content": "@@ -1446,79 +1446,8 @@\n tr:%0A\n-        bico_str = %5B'%5B%5D' if self.__bico is None else str(self.__bico)%5D%0A\n     \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-15_16-39-04",
+            "content": "@@ -1470,16 +1470,23 @@\n '%5B%5D' if \n+self.__\n bico is \n@@ -1503,18 +1503,20 @@\n str(\n+self.__\n bico)\n- for \n %5D%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-39-49",
+            "content": "@@ -1506,27 +1506,8 @@\n for \n-bico in self.__bico\n %5D%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-39-50",
+            "content": "@@ -931,14 +931,12 @@\n e = \n-%5B\n None\n-%5D\n %0A   \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-40-12",
+            "content": "@@ -924,24 +924,28 @@\n e %7C None = %5B\n+None\n %5D%0A        se\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-40-29",
+            "content": "@@ -928,20 +928,16 @@\n None = %5B\n-None\n %5D%0A      \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-40-42",
+            "content": "@@ -932,16 +932,17 @@\n  = %5BNone\n+%5D\n %0A       \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-41-00",
+            "content": "@@ -927,16 +927,17 @@\n  None = \n+%5B\n None%0A   \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-41-00",
+            "content": "@@ -1450,17 +1450,16 @@\n         \n-#\n bico_str\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-41-08",
+            "content": "@@ -1454,150 +1454,81 @@\n     \n-if self.__bico is None:%0A            colchetes\n+#bico_str\n  = \n+%5B\n '%5B%5D'\n-%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bcolchetes%7D, tambor%7Bself.__tambor%7D%22\n+ if bico is None else str(bico) for bico in self.__bico%5D\n %0A   \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-15_16-42-14",
+            "content": "@@ -1519,159 +1519,168 @@\n     \n-tambor_str = %22%3C%22 + ''.join(str(grafite) for grafite in self.__tambor) + %22%3E%22%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bcolchetes%7D, tambor%7B%7D\n+return f%22calibre: %7Bself.__calibre%7D, bico: %7Bcolchetes%7D, tambor%7Bself.__tambor%7D%22%0A        tambor_str = %22%3C%22 + ''.join(str(grafite) for grafite in self.__tambor) + %22%3E\n %22%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_16-42-44",
+            "content": "@@ -1665,26 +1665,16 @@\n  tambor%7B\n-tambor_str\n %7D%22%0A     \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_16-42-45",
+            "content": "@@ -1656,34 +1656,32 @@\n lchetes%7D, tambor\n-: \n %7Btambor_str%7D%22%0A  \n@@ -1682,92 +1682,8 @@\n r%7D%22%0A\n-        tambor_str = %22%3C%22 + ''.join(str(grafite) for grafite in self.__tambor) + %22%3E%22%0A\n     \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-15_16-43-25",
+            "content": "@@ -1415,118 +1415,8 @@\n True\n-%0A%0A    def remove(self) -%3E Grafite %7C None:%0A        grafite_removido = self.__bico%0A        self.__bico = None%0A%0A%0A\n %0A   \n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-15_16-46-01",
+            "content": "@@ -2608,69 +2608,8 @@\n l()%0A\n-        elif args%5B0%5D == 'remove':%0A            polis.remove()%0A\n main\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-15_16-46-23",
+            "content": "@@ -1524,92 +1524,8 @@\n ne%0A%0A\n-    def write(self):%0A        minimo_grafite = 10%0A        self.__bico.usagepersheet()\n %0A%0A  \n@@ -2669,67 +2669,8 @@\n e()%0A\n-        elif args%5B0%5D == 'write':%0A            polis.write()%0A\n main\n",
+            "lines": "83"
+        },
+        {
+            "label": "2025-11-15_16-48-56",
+            "content": "@@ -1573,104 +1573,15 @@\n  10%0A\n-%0A\n        \n- if self.__bico is None:%0A            print('fail: nao existe grafite no bico')%0A        #\n  sel\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-15_16-49-59",
+            "content": "@@ -1660,48 +1660,8 @@\n o')%0A\n-            return self.__bico%0A        %0A\n     \n",
+            "lines": "90"
+        },
+        {
+            "label": "2025-11-15_16-50-57",
+            "content": "@@ -1592,18 +1592,15 @@\n f.__\n-grafite ==\n+bico is\n  Non\n@@ -1649,510 +1649,58 @@\n fite\n-')%0A            return self.__bico%0A%0A        tamanho_atual = self.__bico.getSize()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A%0A        if tamanho_atual %3C= minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A            return%0A        if tamanho_atual - gasto %3C minimo_grafite:%0A            print('fail: folha incompleta')%0A            self.__bico.setSize(minimo_grafite)%0A            return %0A        self.__bico.usagepersheet()\n+ no bico')%0A            return self.__bico%0A        \n %0A   \n",
+            "lines": "92"
+        },
+        {
+            "label": "2025-11-15_16-52-08",
+            "content": "@@ -1588,22 +1588,22 @@\n  self.__\n-calibr\n+grafit\n e == Non\n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-15_16-52-35",
+            "content": "@@ -1542,35 +1542,39 @@\n self\n-, folhas: int = 1) -%3E bool:\n+):%0A        minimo_grafite = 10%0A\n %0A   \n@@ -1580,39 +1580,42 @@\n       if self.__\n-bico is\n+calibre ==\n  None:%0A         \n@@ -1635,21 +1635,25 @@\n l: n\n-%C3%A3o h%C3%A1\n+ao existe\n  grafite\n  no \n@@ -1648,24 +1648,16 @@\n  grafite\n- no bico\n ')%0A     \n@@ -1674,54 +1674,66 @@\n urn \n-False%0A        %0A        for _ in range(folhas):\n+self.__bico%0A%0A        tamanho_atual = self.__bico.getSize()\n %0A   \n@@ -1733,30 +1733,32 @@\n e()%0A        \n-    if\n+dureza =\n  self.__bico\n@@ -1765,106 +1765,180 @@\n .get\n-size() %3C= 0:%0A                print('fail: grafite acabou')%0A                self.__bico = None%0A    \n+hardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A%0A        if tamanho_atual %3C= minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A\n     \n@@ -1943,38 +1943,32 @@\n           return\n- False\n %0A            sel\n@@ -1964,39 +1964,50 @@\n     \n-    self.__bico.usagepersheet()\n+if tamanho_atual - gasto %3C minimo_grafite:\n %0A   \n@@ -2015,86 +2015,55 @@\n     \n-%0A  \n     \n-  # Verifica se o grafite acabou ap%C3%B3s escrever todas as folhas%0A\n+print('fail: folha incompleta')%0A   \n         \n if s\n@@ -2050,34 +2050,32 @@\n ta')%0A           \n-if\n  self.__bico.get\n@@ -2075,68 +2075,51 @@\n ico.\n-gets\n+setS\n ize(\n-) %3C= 0:%0A            print('warning: grafite acabou')\n+minimo_grafite)%0A            return \n %0A   \n@@ -2115,36 +2115,32 @@\n return %0A        \n-    \n self.__bico = No\n@@ -2138,49 +2138,62 @@\n bico\n- = None%0A        %0A        return True%0A    \n+.usagepersheet()%0A        # self.__bico.usagepersheet()\n %0A%0A  \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-15_16-55-35",
+            "content": "@@ -1570,37 +1570,8 @@\n ol:%0A\n-        minimo_grafite = 10%0A%0A\n     \n@@ -1628,25 +1628,21 @@\n l: n\n-ao existe\n+%C3%A3o h%C3%A1\n  grafite\n ')%0A \n@@ -1637,16 +1637,24 @@\n  grafite\n+ no bico\n ')%0A     \n@@ -1673,17 +1673,25 @@\n n False%0A\n+        \n %0A\n-\n         \n@@ -1784,15 +1784,12 @@\n nt('\n-warning\n+fail\n : gr\n@@ -1859,32 +1859,32 @@\n    return False%0A\n-\n             self\n@@ -1906,16 +1906,243 @@\n rsheet()\n+%0A        %0A        # Verifica se o grafite acabou ap%C3%B3s escrever todas as folhas%0A        if self.__bico.getsize() %3C= 0:%0A            print('warning: grafite acabou')%0A            self.__bico = None%0A        %0A        return True%0A    \n %0A%0A    de\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-15_16-58-37",
+            "content": "@@ -1670,24 +1670,16 @@\n  grafite\n- no bico\n ')%0A     \n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-15_16-58-47",
+            "content": "@@ -387,25 +387,20 @@\n  self.__\n-thickness\n+size\n  -= 4%0A  \n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-15_17-00-24",
+            "content": "@@ -383,28 +383,33 @@\n      self.__\n-size\n+thickness\n  -= 4%0A      \n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-15_17-00-49",
+            "content": "@@ -177,71 +177,8 @@\n ize%0A\n-        print(self.__hardness)%0A        print(self.__thickness)%0A\n     \n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-15_17-01-53",
+            "content": "@@ -93,19 +93,29 @@\n f.__\n-size = size\n+thickness = thickness\n %0A   \n@@ -161,37 +161,58 @@\n  self.__\n-thickness = thick\n+size = size%0A        print(self.__hard\n ness\n+)\n %0A       \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-02-29",
+            "content": "@@ -177,24 +177,47 @@\n ess%0A        \n+print(self.__thickness)\n %0A    def usa\n@@ -419,25 +419,20 @@\n  self.__\n-thickness\n+size\n  -= 4%0A  \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-02-49",
+            "content": "@@ -2854,19 +2854,16 @@\n  size = \n-int\n (args%5B2%5D\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-03-11",
+            "content": "@@ -2777,20 +2777,25 @@\n         \n-size\n+thickness\n  = float\n@@ -2832,17 +2832,17 @@\n  = args%5B\n-2\n+3\n %5D%0A      \n@@ -2847,25 +2847,20 @@\n         \n-thickness\n+size\n  = int(a\n@@ -2863,17 +2863,17 @@\n nt(args%5B\n-3\n+2\n %5D)%0A     \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-03-42",
+            "content": "@@ -1063,25 +1063,20 @@\n fite.get\n-thickness\n+size\n () != se\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-04-11",
+            "content": "@@ -2899,25 +2899,20 @@\n Grafite(\n-thickness\n+size\n , hardne\n@@ -2915,20 +2915,25 @@\n rdness, \n-size\n+thickness\n )%0A      \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-06-51",
+            "content": "@@ -2930,32 +2930,8 @@\n ze)%0A\n-            print(graf)%0A\n     \n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-07-01",
+            "content": "@@ -2899,20 +2899,25 @@\n Grafite(\n-size\n+thickness\n , hardne\n@@ -2920,25 +2920,20 @@\n rdness, \n-thickness\n+size\n )%0A      \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-07-24",
+            "content": "@@ -2899,16 +2899,22 @@\n Grafite(\n+size, \n hardness\n@@ -2918,10 +2918,8 @@\n ess,\n- ,\n  thi\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-00",
+            "content": "@@ -2909,20 +2909,16 @@\n rdness, \n-size\n , thickn\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-01",
+            "content": "@@ -2899,21 +2899,20 @@\n Grafite(\n-thick\n+hard\n ness, si\n@@ -2915,20 +2915,21 @@\n , size, \n-hard\n+thick\n ness)%0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-13",
+            "content": "@@ -2903,22 +2903,23 @@\n ite(\n-size, hardness\n+thickness, size\n , ha\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-33",
+            "content": "@@ -35,23 +35,28 @@\n lf, \n-size\n+hardness\n : str, \n-hard\n+thick\n ness\n@@ -2915,21 +2915,20 @@\n rdness, \n-thick\n+hard\n ness)%0A  \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-51",
+            "content": "@@ -57,25 +57,20 @@\n s: int, \n-thickness\n+size\n : int):%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-08-51",
+            "content": "@@ -2926,16 +2926,40 @@\n ckness)%0A\n+            print(graf)%0A\n         \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-15_17-09-07",
+            "content": "@@ -1063,20 +1063,25 @@\n fite.get\n-size\n+thickness\n () != se\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-09-20",
+            "content": "@@ -1724,136 +1724,8 @@\n lse%0A\n-        if self.__bico.getthickness() %3C minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A            return False\n %0A   \n@@ -1948,25 +1948,16 @@\n rsheet()\n-%0A        \n %0A%0A    de\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-15_17-15-20",
+            "content": "@@ -1724,25 +1724,145 @@\n lse%0A        \n+if self.__bico.getthickness() %3C minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A            return False\n %0A\n-\n         for \n@@ -2029,32 +2029,32 @@\n    return False%0A\n+\n             self\n@@ -2081,439 +2081,8 @@\n t()%0A\n-        tamanho_atual = self.__bico.getSize()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A%0A        if tamanho_atual %3C= minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A            return%0A        if tamanho_atual - gasto %3C minimo_grafite:%0A            print('fail: folha incompleta')%0A            self.__bico.setSize(minimo_grafite)%0A            return%0A\n     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-15_17-18-47",
+            "content": "@@ -487,17 +487,17 @@\n  def set\n-s\n+S\n ize(self\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-19-20",
+            "content": "@@ -1992,25 +1992,25 @@\n f.__bico.get\n-s\n+S\n ize()%0A      \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-19-42",
+            "content": "@@ -2348,17 +2348,17 @@\n bico.set\n-s\n+S\n ize(mini\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-20-20",
+            "content": "@@ -2141,16 +2141,17 @@\n _atual %3C\n+=\n  minimo_\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-20-37",
+            "content": "@@ -2115,16 +2115,126 @@\n za, 1)%0A%0A\n+        if tamanho_atual %3C minimo_grafite:%0A            print('fail: tamanho insuficiente')%0A            return%0A\n         \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-20-46",
+            "content": "@@ -2114,24 +2114,16 @@\n eza, 1)%0A\n-        \n %0A       \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-22-12",
+            "content": "@@ -2114,16 +2114,24 @@\n eza, 1)%0A\n+        \n %0A       \n@@ -2157,17 +2157,16 @@\n  gasto %3C\n-=\n  minimo_\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-22-27",
+            "content": "@@ -2103,25 +2103,22 @@\n  6%7D.get(\n-thickness\n+dureza\n , 1)%0A%0A  \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-23-20",
+            "content": "@@ -2103,22 +2103,25 @@\n  6%7D.get(\n-dureza\n+thickness\n , 1)%0A%0A  \n@@ -2293,35 +2293,8 @@\n     \n-self.__bico.usagepersheet()\n %0A%0A  \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-23-54",
+            "content": "@@ -2277,16 +2277,52 @@\n   return\n+%0A        self.__bico.usagepersheet()\n %0A%0A    de\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-24-17",
+            "content": "@@ -1996,25 +1996,20 @@\n bico.get\n-thickness\n+size\n ()%0A     \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-24-35",
+            "content": "@@ -2216,16 +2216,64 @@\n pleta')%0A\n+            self.__bico.setsize(minimo_grafite)%0A\n         \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-24-57",
+            "content": "@@ -2238,44 +2238,8 @@\n turn\n-%0A        self.__bico.usagepersheet()\n %0A%0A  \n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-11-15_17-25-25",
+            "content": "@@ -2135,34 +2135,21 @@\n  if \n-self.__bico.getthickness()\n+tamanho_atual\n  - g\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-26-10",
+            "content": "@@ -1572,32 +1572,61 @@\n t = 1) -%3E bool:%0A\n+        minimo_grafite = 10%0A%0A\n         if self.\n@@ -1741,191 +1741,46 @@\n     \n-dureza = self.__bico.gethardness()%0A        gasto_por_folha = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        gasto_total = gasto_por_folha * folhas%0A        tamanho_atual =\n+for _ in range(folhas):%0A            if\n  sel\n@@ -1798,17 +1798,21 @@\n tsize() \n- \n+%3C= 0:\n %0A       \n@@ -1812,25 +1812,24 @@\n         \n-%0A\n         \n if taman\n@@ -1824,84 +1824,80 @@\n     \n-if tamanho_atual %3C gasto_total:%0A            print('fail: folha incompleta')%0A\n+print('warning: grafite acabou')%0A                self.__bico = None%0A    \n     \n@@ -1929,40 +1929,90 @@\n     \n-%0A\n     \n-    for _ in range(folhas):\n+self.__bico.usagepersheet()%0A        tamanho_atual = self.__bico.getthickness()\n %0A   \n@@ -2008,35 +2008,40 @@\n kness()%0A        \n-   \n+dureza =\n  self.__bico.usa\n@@ -2041,177 +2041,254 @@\n ico.\n-usagepersheet()%0A        %0A        %0A        if self.__bico.getsize() %3C= 0:%0A            print('warning: grafite acabou')%0A            self.__bico = None%0A    %0A    return True\n+gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A%0A        if self.__bico.getthickness() - gasto %3C= minimo_grafite:%0A            print('fail: folha incompleta')%0A            return%0A        self.__bico.usagepersheet()\n %0A%0A  \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-28-01",
+            "content": "@@ -2249,28 +2249,24 @@\n = None%0A    %0A\n-    \n     return T\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-15_17-28-10",
+            "content": "@@ -1584,37 +1584,8 @@\n ol:%0A\n-        minimo_grafite = 10%0A%0A\n     \n@@ -1712,46 +1712,191 @@\n     \n-for _ in range(folhas):%0A            if\n+dureza = self.__bico.gethardness()%0A        gasto_por_folha = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        gasto_total = gasto_por_folha * folhas%0A        tamanho_atual =\n  sel\n@@ -1918,13 +1918,9 @@\n e() \n-%3C= 0:\n+ \n %0A   \n@@ -1920,32 +1920,33 @@\n )  %0A        \n+%0A\n         \n print('warni\n@@ -1937,80 +1937,84 @@\n     \n-print('warning: grafite acabou')%0A                self.__bico = None%0A    \n+if tamanho_atual %3C gasto_total:%0A            print('fail: folha incompleta')%0A\n     \n@@ -2046,324 +2046,227 @@\n     \n-  \n-  self.__bico.usagepersheet()%0A        tamanho_atual = self.__bico.getthickness()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A%0A        if tamanho_atual - gasto %3C= minimo_grafite:%0A            print('fail: folha incompleta')%0A            \n+%0A        for _ in range(folhas):%0A            self.__bico.usagepersheet()%0A        %0A        %0A        if self.__bico.getsize() %3C= 0:%0A            print('warning: grafite acabou')%0A            self.__bico = None\n %0A    \n+%0A\n         \n %0A%0A  \n@@ -2261,16 +2261,27 @@\n         \n+return True\n %0A%0A    de\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-15_17-28-40",
+            "content": "@@ -1996,20 +1996,25 @@\n bico.get\n-size\n+thickness\n ()%0A     \n@@ -2123,43 +2123,8 @@\n  1)%0A\n-        gasto_total = gasto * folha\n %0A   \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-33-30",
+            "content": "@@ -2149,17 +2149,16 @@\n  * folha\n-s\n %0A       \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-33-36",
+            "content": "@@ -2219,26 +2219,39 @@\n     \n-return self.__bico\n+print('fail: folha incompleta')\n %0A   \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-34-04",
+            "content": "@@ -2184,17 +2184,17 @@\n - gasto \n-=\n+%3C\n = minimo\n@@ -2219,39 +2219,26 @@\n     \n-print('fail: folha incompleta')\n+return self.__bico\n %0A   \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-34-50",
+            "content": "@@ -2184,17 +2184,17 @@\n - gasto \n-%3C\n+=\n = minimo\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-35-01",
+            "content": "@@ -2184,17 +2184,17 @@\n - gasto \n-=\n+%3C\n = minimo\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-35-13",
+            "content": "@@ -1572,32 +1572,61 @@\n t = 1) -%3E bool:%0A\n+        minimo_grafite = 10%0A%0A\n         if self.\n@@ -1960,37 +1960,8 @@\n et()\n-%0A%0A        minimo_grafite = 10\n %0A   \n@@ -1996,25 +1996,20 @@\n bico.get\n-thickness\n+size\n ()%0A     \n@@ -2247,17 +2247,16 @@\n pleta')%0A\n-%0A\n         \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-15_17-36-33",
+            "content": "@@ -2189,17 +2189,17 @@\n - gasto \n-%3C\n+=\n = minimo\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-36-42",
+            "content": "@@ -1996,20 +1996,25 @@\n bico.get\n-size\n+thickness\n ()%0A     \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-36-51",
+            "content": "@@ -1712,208 +1712,13 @@\n     \n-dureza = self.__bico.gethardness()%0A        gasto_por_folha = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        %0A        # Verifica ANTES de cada folha se tem grafite suficiente%0A        for i\n+for _\n  in \n@@ -1748,23 +1748,10 @@\n     \n-tamanho_atual =\n+if\n  sel\n@@ -1773,126 +1773,97 @@\n e() \n- # CORRE%C3%87%C3%83O: getsize()%0A            if tamanho_atual %3C gasto_por_folha:%0A                print('fail: folha incompleta')\n+%3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None\n %0A   \n@@ -1928,24 +1928,25 @@\n sheet()%0A\n+%0A\n         \n %0A       \n@@ -1941,182 +1941,273 @@\n     \n-%0A        # Verifica se acabou ap%C3%B3s escrever todas as folhas%0A        if self.__bico.getsize() %3C= 0:%0A            print('warning: grafite acabou')%0A            self.__bic\n+minimo_grafite = 10%0A        tamanho_atual = self.__bico.getsize()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        gasto_total = gasto * folhas%0A        if tamanho_atual - gast\n o \n+%3C\n = \n-None\n+minimo_grafite:\n %0A   \n@@ -2211,36 +2211,51 @@\n         \n-%0A\n     \n-    return True\n+print('fail: folha incompleta')\n %0A%0A      \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-15_17-37-46",
+            "content": "@@ -2029,16 +2029,17 @@\n o_atual \n+%3C\n  gasto_p\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-38-16",
+            "content": "@@ -2029,18 +2029,16 @@\n o_atual \n-%3C=\n  gasto_p\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-38-18",
+            "content": "@@ -2029,17 +2029,17 @@\n o_atual \n-=\n+%3C\n = gasto_\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-38-22",
+            "content": "@@ -2029,17 +2029,18 @@\n o_atual \n-%3C\n+==\n  gasto_p\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-15_17-38-48",
+            "content": "class Grafite:\n    def __init__(self, size: str, hardness: int, thickness: int):\n        self.__size = size\n        self.__hardness = hardness\n        self.__thickness = thickness\n        \n    def usagepersheet(self):\n        if self.__hardness == 'HB':\n            self.__size -= 1\n        if self.__hardness == '2B':\n            self.__size -= 2\n        if self.__hardness == '4B':\n            self.__thickness -= 4\n        if self.__hardness == '6B':\n            self.__size -= 6\n    def setsize(self, novo_tamanho: int):\n        self.__size = novo_tamanho\n    def getthickness(self):\n        return self.__thickness\n    def gethardness(self):\n        return self.__hardness\n    def getsize(self):\n        return self.__size\n    def __str__(self):\n        return f\"[{self.__size}:{self.__hardness}:{self.__thickness}]\"\nclass Lapiseira:\n    def __init__(self, calibre: int):\n        self.__calibre = calibre\n        self.__bico: Grafite | None = None\n        self.__tambor: list[Grafite] = []\n    \n    def insert(self, grafite: Grafite) -> bool:\n        if grafite.getsize() != self.__calibre:\n            print('fail: calibre incompat\u00edvel')\n            return False\n        self.__tambor.append(grafite)\n        return True\n\n    def pull(self) -> bool:\n        if self.__bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        self.__bico = self.__tambor.pop(0)\n        return True\n\n    def remove(self) -> Grafite | None:\n        grafite_removido = self.__bico\n        self.__bico = None\n\n    def write(self, folhas: int = 1) -> bool:\n        if self.__bico is None:\n            print('fail: nao existe grafite no bico')\n            return False\n        \n        dureza = self.__bico.gethardness()\n        gasto_por_folha = {'HB': 1, '2B': 2, '4B': 4, '6B': 6}.get(dureza, 1)\n        \n        # Verifica ANTES de cada folha se tem grafite suficiente\n        for i in range(folhas):\n            tamanho_atual = self.__bico.getsize()  # CORRE\u00c7\u00c3O: getsize()\n            if tamanho_atual < gasto_por_folha:\n                print('fail: folha incompleta')\n                return False\n            self.__bico.usagepersheet()\n        \n        # Verifica se acabou ap\u00f3s escrever todas as folhas\n        if self.__bico.getsize() <= 0:\n            print('warning: grafite acabou')\n            self.__bico = None\n        \n        return True\n\n            \n            \n\n    def __str__(self) -> str:\n        if self.__bico is None:\n            colchetes = '[]'\n            tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n            return f\"calibre: {self.__calibre}, bico: {colchetes}, tambor: {tambor_str}\"\n        tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n        return f\"calibre: {self.__calibre}, bico: {self.__bico}, tambor: {tambor_str}\"\n\ndef main():\n    while True:\n        linha: str = input()\n        args: list[str] = linha.split(' ')\n        print(f'$' + linha)\n\n        if args[0] == 'end':\n            break\n        elif args[0] == 'init':\n            calibre = float(args[1])\n            polis = Lapiseira(calibre)\n        elif args[0] == 'show':\n            print(polis)\n        elif args[0] == 'insert':\n            size = float(args[1])\n            hardness = args[2]\n            thickness = int(args[3])\n            graf = Grafite(size, hardness, thickness)\n            # print(graf)\n            polis.insert(graf)\n        elif args[0] == 'pull':\n            polis.pull()\n        elif args[0] == 'remove':\n            polis.remove()\n        elif args[0] == 'write':\n            polis.write()\nmain()",
+            "lines": "110"
         }
     ]
 }
