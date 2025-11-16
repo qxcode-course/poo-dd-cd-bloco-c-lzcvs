@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /home/luiza/Documentos/repos/poo-dd-cd-bloco-c-lzcvs/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-15 15:32:40'
+  cache_timestamp: '2025-11-16 13:35:02'
   filters:
   - listas
 expanded:
@@ -21,7 +21,7 @@ expanded:
 tasks:
   poo@array: '{rate:100, alone:10, study:90}'
   poo@budega: '{rate:100, human:monitor, guide:video_resposta, alone:7, study:100}'
-  poo@lapiseira: '{rate:71}'
+  poo@lapiseira: '{rate:100, iagen:deepseek, alone:8, study:250}'
 flags:
   quests: 0
   tracks: 0

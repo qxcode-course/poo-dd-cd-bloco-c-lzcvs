@@ -1,20 +1,25 @@
 class Grafite:
-    def __init__(self, size: str, hardness: int, thickness: int):
+    def __init__(self, size: str, hardness: str, thickness: int):
         self.__size = size
         self.__hardness = hardness
         self.__thickness = thickness
         
     def usagepersheet(self):
+        consumo = 0
         if self.__hardness == 'HB':
-            self.__size -= 1
+            consumo = 1
         if self.__hardness == '2B':
-            self.__size -= 2
+            consumo= 2
         if self.__hardness == '4B':
-            self.__thickness -= 4
+            consumo = 4
         if self.__hardness == '6B':
-            self.__size -= 6
+            consumo = 6
+        self.__thickness -= consumo
+        
     def setsize(self, novo_tamanho: int):
         self.__size = novo_tamanho
+    def setthicness(self, novo_tamanho: int):
+        self.__thickness = novo_tamanho
     def getthickness(self):
         return self.__thickness
     def gethardness(self):
@@ -54,20 +59,19 @@ class Lapiseira:
             print('fail: nao existe grafite no bico')
             return False
         
-        for _ in range(folhas):
-            if self.__bico.getsize() <= 0:
-                print('warning: grafite acabou')
-                self.__bico = None
-                return False
-            self.__bico.usagepersheet()
-            
-        tamanho_atual = self.__bico.getsize()
+        tamanho_atual = self.__bico.getthickness()
         dureza = self.__bico.gethardness()
         gasto = {'HB': 1, '2B': 2, '4B': 4, '6B': 6}.get(dureza, 1)
-        gasto_total = gasto * folhas
-        if tamanho_atual - gasto = minimo_grafite:
+
+        if tamanho_atual <= minimo_grafite:
+            print('fail: tamanho insuficiente')
+            return 
+        if tamanho_atual - gasto < minimo_grafite:
             print('fail: folha incompleta')
-            
+            self.__bico.setthicness(10)
+            return
+        self.__bico.usagepersheet()
+
             
 
     def __str__(self) -> str:

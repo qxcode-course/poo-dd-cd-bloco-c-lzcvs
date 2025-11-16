@@ -887,8 +887,353 @@
         },
         {
             "label": "2025-11-15_17-38-48",
-            "content": "class Grafite:\n    def __init__(self, size: str, hardness: int, thickness: int):\n        self.__size = size\n        self.__hardness = hardness\n        self.__thickness = thickness\n        \n    def usagepersheet(self):\n        if self.__hardness == 'HB':\n            self.__size -= 1\n        if self.__hardness == '2B':\n            self.__size -= 2\n        if self.__hardness == '4B':\n            self.__thickness -= 4\n        if self.__hardness == '6B':\n            self.__size -= 6\n    def setsize(self, novo_tamanho: int):\n        self.__size = novo_tamanho\n    def getthickness(self):\n        return self.__thickness\n    def gethardness(self):\n        return self.__hardness\n    def getsize(self):\n        return self.__size\n    def __str__(self):\n        return f\"[{self.__size}:{self.__hardness}:{self.__thickness}]\"\nclass Lapiseira:\n    def __init__(self, calibre: int):\n        self.__calibre = calibre\n        self.__bico: Grafite | None = None\n        self.__tambor: list[Grafite] = []\n    \n    def insert(self, grafite: Grafite) -> bool:\n        if grafite.getsize() != self.__calibre:\n            print('fail: calibre incompat\u00edvel')\n            return False\n        self.__tambor.append(grafite)\n        return True\n\n    def pull(self) -> bool:\n        if self.__bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        self.__bico = self.__tambor.pop(0)\n        return True\n\n    def remove(self) -> Grafite | None:\n        grafite_removido = self.__bico\n        self.__bico = None\n\n    def write(self, folhas: int = 1) -> bool:\n        if self.__bico is None:\n            print('fail: nao existe grafite no bico')\n            return False\n        \n        dureza = self.__bico.gethardness()\n        gasto_por_folha = {'HB': 1, '2B': 2, '4B': 4, '6B': 6}.get(dureza, 1)\n        \n        # Verifica ANTES de cada folha se tem grafite suficiente\n        for i in range(folhas):\n            tamanho_atual = self.__bico.getsize()  # CORRE\u00c7\u00c3O: getsize()\n            if tamanho_atual < gasto_por_folha:\n                print('fail: folha incompleta')\n                return False\n            self.__bico.usagepersheet()\n        \n        # Verifica se acabou ap\u00f3s escrever todas as folhas\n        if self.__bico.getsize() <= 0:\n            print('warning: grafite acabou')\n            self.__bico = None\n        \n        return True\n\n            \n            \n\n    def __str__(self) -> str:\n        if self.__bico is None:\n            colchetes = '[]'\n            tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n            return f\"calibre: {self.__calibre}, bico: {colchetes}, tambor: {tambor_str}\"\n        tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n        return f\"calibre: {self.__calibre}, bico: {self.__bico}, tambor: {tambor_str}\"\n\ndef main():\n    while True:\n        linha: str = input()\n        args: list[str] = linha.split(' ')\n        print(f'$' + linha)\n\n        if args[0] == 'end':\n            break\n        elif args[0] == 'init':\n            calibre = float(args[1])\n            polis = Lapiseira(calibre)\n        elif args[0] == 'show':\n            print(polis)\n        elif args[0] == 'insert':\n            size = float(args[1])\n            hardness = args[2]\n            thickness = int(args[3])\n            graf = Grafite(size, hardness, thickness)\n            # print(graf)\n            polis.insert(graf)\n        elif args[0] == 'pull':\n            polis.pull()\n        elif args[0] == 'remove':\n            polis.remove()\n        elif args[0] == 'write':\n            polis.write()\nmain()",
+            "content": "@@ -1584,37 +1584,8 @@\n ol:%0A\n-        minimo_grafite = 10%0A%0A\n     \n@@ -1712,13 +1712,208 @@\n     \n-for _\n+dureza = self.__bico.gethardness()%0A        gasto_por_folha = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        %0A        # Verifica ANTES de cada folha se tem grafite suficiente%0A        for i\n  in \n@@ -1931,34 +1931,47 @@\n s):%0A            \n-if\n+tamanho_atual =\n  self.__bico.get\n@@ -1981,97 +1981,126 @@\n e() \n-%3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None\n+ # CORRE%C3%87%C3%83O: getsize()%0A            if tamanho_atual %3C gasto_por_folha:%0A                print('fail: folha incompleta')\n %0A   \n@@ -2165,36 +2165,32 @@\n sheet()%0A        \n-    \n %0A        tamanho\n@@ -2186,244 +2186,173 @@\n     \n-tamanho_atual = self.__bico.getsize()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        gasto_total = gasto * folhas%0A        if tamanho_atual - gasto = minimo_grafite:\n+# Verifica se acabou ap%C3%B3s escrever todas as folhas%0A        if self.__bico.getsize() %3C= 0:%0A            print('warning: grafite acabou')%0A            self.__bico = None\n %0A   \n@@ -2360,43 +2360,29 @@\n     \n+%0A  \n     \n-print('fail: folha incompleta')\n+  return True%0A\n %0A   \n",
             "lines": "110"
+        },
+        {
+            "label": "2025-11-16_13-35-07",
+            "content": "@@ -2198,17 +2198,16 @@\n  gasto =\n-=\n  minimo_\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_13-35-22",
+            "content": "@@ -2264,27 +2264,8 @@\n a')%0A\n-            return%0A\n     \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_13-35-36",
+            "content": "@@ -2270,38 +2270,32 @@\n           return\n- False\n %0A            %0A  \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-35-40",
+            "content": "@@ -2197,17 +2197,17 @@\n - gasto \n-%3C\n+=\n = minimo\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-36-07",
+            "content": "@@ -2196,22 +2196,16 @@\n  - gasto\n-_total\n  %3C= mini\n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-36-39",
+            "content": "@@ -2226,59 +2226,8 @@\n te:%0A\n-            self.__bico.getsize() = minimo_grafite%0A\n     \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-37-38",
+            "content": "@@ -2254,16 +2254,20 @@\n getsize(\n+) = \n minimo_g\n@@ -2268,25 +2268,24 @@\n nimo_grafite\n-)\n %0A           \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-37-57",
+            "content": "@@ -2246,32 +2246,46 @@\n .__bico.getsize(\n+minimo_grafite\n )%0A            pr\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-38-08",
+            "content": "@@ -2189,16 +2189,30 @@\n o_atual \n+- gasto_total \n %3C= minim\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-38-28",
+            "content": "@@ -2175,21 +2175,29 @@\n      if \n-gasto\n+tamanho_atual\n  %3C= mini\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-38-37",
+            "content": "@@ -1721,32 +1721,68 @@\n  False%0A        %0A\n+        for _ in range(folhas):%0A    \n         if self.\n@@ -1805,24 +1805,15 @@\n  %3C= \n-minimo_grafite:%0A\n+0:%0A    \n     \n@@ -1831,234 +1831,459 @@\n nt('\n-Fail: folha incompleta')%0A            return False%0A            %0A        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A    \n+warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            self.__bico.usagepersheet()%0A            %0A        tamanho_atual = self.__bico.getsize()%0A        dureza = self.__bico.gethardness()%0A        gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A        gasto_total = gasto * folhas%0A        if gasto %3C= minimo_grafite:%0A            self.__bico.getsize()%0A            print('fail: folha incompleta')%0A\n     \n@@ -2315,35 +2315,12 @@\n     \n+    \n-self.__bico.usagepersheet()\n %0A   \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-42-23",
+            "content": "@@ -1755,25 +1755,20 @@\n bico.get\n-thickness\n+size\n () %3C= mi\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-16_13-42-45",
+            "content": "@@ -1853,34 +1853,13 @@\n urn \n-self.__bico.getthickness()\n+False\n %0A   \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-16_13-43-20",
+            "content": "@@ -1,3299 +1,56 @@\n-class Grafite:%0A    def __init__(self, size: str, hardness: int, thickness: int):%0A        self.__size = size%0A        self.__hardness = hardness%0A        self.__thickness = thickness%0A        %0A    def usagepersheet(self):%0A        if self.__hardness == 'HB':%0A            self.__size -= 1%0A        if self.__hardness == '2B':%0A            self.__size -= 2%0A        if self.__hardness == '4B':%0A            self.__thickness -= 4%0A        if self.__hardness == '6B':%0A            self.__size -= 6%0A    def setsize(self, novo_tamanho: int):%0A        self.__size = novo_tamanho%0A    def getthickness(self):%0A        return self.__thickness%0A    def gethardness(self):%0A        return self.__hardness%0A    def getsize(self):%0A        return self.__size%0A    def __str__(self):%0A        return f%22%5B%7Bself.__size%7D:%7Bself.__hardness%7D:%7Bself.__thickness%7D%5D%22%0Aclass Lapiseira:%0A    def __init__(self, calibre: int):%0A        self.__calibre = calibre%0A        self.__bico: Grafite %7C None = None%0A        self.__tambor: list%5BGrafite%5D = %5B%5D%0A    %0A    def insert(self, grafite: Grafite) -%3E bool:%0A        if grafite.getsize() != self.__calibre:%0A            print('fail: calibre incompat%C3%ADvel')%0A            return False%0A        self.__tambor.append(grafite)%0A        return True%0A%0A    def pull(self) -%3E bool:%0A        if self.__bico is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return False%0A        self.__bico = self.__tambor.pop(0)%0A        return True%0A%0A    def remove(self) -%3E Grafite %7C None:%0A        grafite_removido = self.__bico%0A        self.__bico = None%0A%0A    def write(self, folhas: int = 1) -%3E bool:%0A        minimo_grafite = 10%0A%0A        if self.__bico is None:%0A            print('fail: nao existe grafite no bico')%0A            return False%0A        %0A        if self.__bico.getthickness() %3C= minimo_grafite:%0A            print('Fail: folha incompleta')%0A            %0A        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A        self.__bico.usagepersheet()%0A            %0A%0A    def __str__(self) -%3E str:%0A        if self.__bico is None:%0A            colchetes = '%5B%5D'%0A            tambor_str = %22%3C%22 + ''.join(str(grafite) for grafite in self.__tambor) + %22%3E%22%0A            return f%22calibre: %7Bself.__calibre%7D, bico: %7Bcolchetes%7D, tambor: %7Btambor_str%7D%22%0A        tambor_str = %22%3C%22 + ''.join(str(grafite) for grafite in self.__tambor) + %22%3E%22%0A        return f%22calibre: %7Bself.__calibre%7D, bico: %7Bself.__bico%7D, tambor: %7Btambor_str%7D%22%0A%0Adef main():%0A    while True:%0A        linha: str = input()%0A        args: list%5Bstr%5D = linha.split(' ')%0A        print(f'$' + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'init':%0A            calibre = float(args%5B1%5D)%0A            polis = Lapiseira(calibre)%0A        elif args%5B0%5D == 'show':%0A            print(polis)%0A        elif args%5B0%5D == 'insert':%0A            size = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            thickness = int(args%5B3%5D)%0A            graf = Grafite(size, hardness, thickness)%0A            # print(graf)%0A            polis.insert(graf)%0A        elif args%5B0%5D == 'pull':%0A            polis.pull()%0A        elif args%5B0%5D == 'remove':%0A            polis.remove()%0A        elif args%5B0%5D == 'write':%0A            polis.write()%0Amain()\n+@@ -1879,25 +1879,8 @@%0A ss()%0A- = minimo_grafite%0A %250A   %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-16_13-43-52",
+            "content": "@@ -1721,32 +1721,133 @@\n  False%0A        %0A\n+        if self.__bico.getthickness() %3C= minimo_grafite:%0A            print('Fail: folha incompleta')%0A\n             %0A   \n@@ -2031,36 +2031,32 @@\n n False%0A        \n-    \n self.__bico.usag\n@@ -2071,109 +2071,8 @@\n t()%0A\n-        if self.__bico.getthickness() %3C= minimo_grafite:%0A            print('Fail: folha incompleta')%0A\n     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-16_13-44-27",
+            "content": "@@ -1930,32 +1930,36 @@\n n False%0A        \n+    \n self.__bico.usag\n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-16_13-44-35",
+            "content": "@@ -1922,32 +1922,68 @@\n    return False%0A\n+        self.__bico.usagepersheet()%0A\n         if self.\n@@ -2071,44 +2071,8 @@\n a')%0A\n-        self.__bico.usagepersheet()%0A\n     \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-16_13-44-46",
+            "content": "@@ -1725,24 +1725,37 @@\n se%0A        %0A\n+            %0A\n         for \n@@ -1930,21 +1930,16 @@\n n False%0A\n-    %0A\n         \n@@ -2031,21 +2031,16 @@\n pleta')%0A\n-    %0A\n         \n@@ -2075,27 +2075,16 @@\n         \n-return True\n     %0A%0A  \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-16_13-45-18",
+            "content": "@@ -1463,24 +1463,166 @@\n ite %7C None:%0A\n+        grafite_removido = self.__bico%0A        self.__bico = None%0A%0A    def write(self, folhas: int = 1) -%3E bool:%0A        minimo_grafite = 10%0A%0A\n         if s\n@@ -1743,110 +1743,29 @@\n   fo\n-lhas_escritas = 0%0A        %0A        for i in range(folhas):%0A            # Verifica se ainda tem grafite\n+r _ in range(folhas):\n %0A   \n@@ -1915,92 +1915,19 @@\n urn \n-folhas_escritas%0A            %0A            # Verifica se a espessura %C3%A9 suficiente%0A    \n+False%0A    %0A\n     \n@@ -1961,16 +1961,17 @@\n ness() %3C\n+=\n  minimo_\n@@ -1987,36 +1987,32 @@\n             \n- \n-   \n print('\n-f\n+F\n ail: folha i\n@@ -2031,302 +2031,44 @@\n     \n-            return folhas_escritas%0A            %0A            # Consome o grafite (exemplo - ajuste conforme sua implementa%C3%A7%C3%A3o)%0A            consumo_por_folha = 1  # ou outro valor%0A            self.__bico.setsize(self.__bico.getsize() - consumo_por_folha)%0A            folhas_escritas += 1%0A        \n+%0A        self.__bico.usagepersheet()\n %0A   \n@@ -2083,23 +2083,13 @@\n urn \n-folhas_escritas\n+True \n    %0A\n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-16_13-47-28",
+            "content": "@@ -1450,16 +1450,8 @@\n self\n-, folhas\n ) -%3E\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-16_13-47-42",
+            "content": "@@ -1442,24 +1442,32 @@\n  remove(self\n+, folhas\n ) -%3E Grafite\n@@ -1479,150 +1479,8 @@\n ne:%0A\n-        grafite_removido = self.__bico%0A        self.__bico = None%0A%0A    def write(self, folhas: int = 1) -%3E bool:%0A        minimo_grafite = 10%0A%0A\n     \n@@ -1609,29 +1609,110 @@\n   fo\n-r _ in range(folhas):\n+lhas_escritas = 0%0A        %0A        for i in range(folhas):%0A            # Verifica se ainda tem grafite\n %0A   \n@@ -1862,116 +1862,87 @@\n urn \n-False%0A            self.__bico.usagepersheet()%0A            %0A            tamanho_atual = self.__bico.getsize()\n+folhas_escritas%0A            %0A            # Verifica se a espessura %C3%A9 suficiente\n %0A   \n@@ -1954,16 +1954,10 @@\n     \n-dureza =\n+if\n  sel\n@@ -1972,279 +1972,375 @@\n .get\n-hard\n+thick\n ness()\n-%0A            gasto = %7B'HB': 1, '2B': 2, '4B': 4, '6B': 6%7D.get(dureza, 1)%0A            gasto_total = gasto * folhas%0A            if tamanho_atual - gasto_total %3C= minimo_grafite:%0A                self.__bico.getsize()%0A                print('fail: folha incompleta')\n+ %3C minimo_grafite:%0A                print('fail: folha incompleta')%0A                return folhas_escritas%0A            %0A            # Consome o grafite (exemplo - ajuste conforme sua implementa%C3%A7%C3%A3o)%0A            consumo_por_folha = 1  # ou outro valor%0A            self.__bico.setsize(self.__bico.getsize() - consumo_por_folha)%0A            folhas_escritas += 1\n %0A   \n@@ -2336,32 +2336,33 @@\n as += 1%0A        \n+%0A\n         return F\n@@ -2364,36 +2364,23 @@\n urn \n-False%0A            %0A         \n+folhas_escritas\n    %0A\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-16_13-49-38",
+            "content": "@@ -1978,16 +1978,20 @@\n         \n+    \n tamanho_\n@@ -2028,16 +2028,20 @@\n         \n+    \n dureza =\n@@ -2075,16 +2075,20 @@\n         \n+ \n+   \n gasto = \n@@ -2139,25 +2139,65 @@\n eza, 1)%0A    \n-%0A\n+        gasto_total = gasto * folhas%0A    \n         if t\n@@ -2216,16 +2216,22 @@\n  - gasto\n+_total\n  %3C= mini\n@@ -2238,24 +2238,28 @@\n mo_grafite:%0A\n+    \n             \n@@ -2284,32 +2284,36 @@\n e()%0A            \n+    \n print('fail: fol\n@@ -2328,16 +2328,20 @@\n pleta')%0A\n+    \n         \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-49-59",
+            "content": "@@ -1909,32 +1909,72 @@\n    return False%0A\n+            self.__bico.usagepersheet()%0A\n             %0A   \n@@ -2291,44 +2291,8 @@\n lse%0A\n-        self.__bico.usagepersheet()%0A\n     \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-50-08",
+            "content": "@@ -1721,32 +1721,233 @@\n  False%0A        %0A\n+        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            %0A\n         tamanho_\n@@ -1968,32 +1968,32 @@\n _bico.getsize()%0A\n-\n         dureza =\n@@ -2087,16 +2087,21 @@\n eza, 1)%0A\n+    %0A\n         \n@@ -2222,16 +2222,16 @@\n pleta')%0A\n+\n         \n@@ -2250,210 +2250,8 @@\n alse\n-%0A%0A        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            \n %0A   \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-50-33",
+            "content": "@@ -1946,31 +1946,24 @@\n             \n-return \n self.__bico.\n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-50-48",
+            "content": "@@ -1957,29 +1957,37 @@\n  return \n-tamanho_atual\n+self.__bico.getsize()\n %0A       \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-51-12",
+            "content": "@@ -1942,41 +1942,8 @@\n te:%0A\n-            print(tamanho_atual)%0A\n     \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-51-25",
+            "content": "@@ -1768,25 +1768,20 @@\n bico.get\n-thickness\n+size\n ()%0A     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-16_13-51-33",
+            "content": "@@ -1939,24 +1939,57 @@\n mo_grafite:%0A\n+            print(tamanho_atual)%0A\n             \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-16_13-51-41",
+            "content": "@@ -1939,24 +1939,57 @@\n mo_grafite:%0A\n+            return tamanho_atual%0A\n             \n@@ -2039,29 +2039,21 @@\n  return \n-tamanho_atual\n+False\n %0A%0A      \n",
+            "lines": "109"
+        },
+        {
+            "label": "2025-11-16_13-51-53",
+            "content": "@@ -1888,17 +1888,17 @@\n dureza, \n-4\n+1\n )%0A      \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-52-21",
+            "content": "@@ -1732,210 +1732,8 @@\n     \n-%0A%0A        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            \n %0A   \n@@ -1888,17 +1888,17 @@\n dureza, \n-1\n+4\n )%0A      \n@@ -2019,16 +2019,255 @@\n ho_atual\n+%0A%0A        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            %0A        self.__bico.usagepersheet()%0A\n         \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-52-39",
+            "content": "@@ -1922,48 +1922,8 @@\n lse%0A\n-            self.__bico.usagepersheet()%0A\n     \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-16_13-52-54",
+            "content": "@@ -2220,13 +2220,18 @@\n lha \n-BOSTA\n+incompleta\n ')%0A \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_13-53-11",
+            "content": "@@ -2169,18 +2169,30 @@\n asto %3C= \n-10\n+minimo_grafite\n :%0A      \n@@ -2220,18 +2220,13 @@\n lha \n-incompleta\n+BOSTA\n ')%0A \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_13-53-36",
+            "content": "@@ -2221,51 +2221,8 @@\n a')%0A\n-            tamanho_atual = minimo_grafite%0A\n     \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_13-55-01",
+            "content": "@@ -2137,117 +2137,8 @@\n  1)%0A\n-        if tamanho_atual %3C minimo_grafite:%0A            print('fail tamanho insuficiente')%0A            return%0A\n     \n@@ -2279,16 +2279,41 @@\n  return \n+tamanho_atual            \n %0A       \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_13-56-26",
+            "content": "@@ -1726,24 +1726,256 @@\n e%0A        %0A%0A\n+        for _ in range(folhas):%0A            if self.__bico.getsize() %3C= 0:%0A                print('warning: grafite acabou')%0A                self.__bico = None%0A                return False%0A            self.__bico.usagepersheet()%0A    \n         %0A   \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_13-57-12",
+            "content": "@@ -1724,24 +1724,34 @@\n lse%0A        \n+%0A%0A        \n %0A        tam\n@@ -2010,16 +2010,162 @@\n  return%0A\n+        if tamanho_atual - gasto %3C= 10:%0A            print('fail: folha incompleta')%0A            tamanho_atual = minimo_grafite%0A            return \n %0A       \n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-11-16_13-58-10",
+            "content": "@@ -2004,43 +2004,8 @@\n urn%0A\n-        self.__bico.usagepersheet()\n %0A   \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-16_13-58-26",
+            "content": "@@ -1999,30 +1999,16 @@\n   return\n- tamanho_atual\n %0A       \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-16_13-58-46",
+            "content": "@@ -2017,46 +2017,8 @@\n tual\n-%0A%0A        if tamanho_atual - gasto %3C= \n %0A   \n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-16_13-59-35",
+            "content": "@@ -2055,50 +2055,8 @@\n  %3C= \n-minimo_grafite:%0A            print('bosta')\n %0A   \n",
+            "lines": "102"
+        },
+        {
+            "label": "2025-11-16_13-59-36",
+            "content": "@@ -2071,66 +2071,8 @@\n te:%0A\n-            print(tamanho_atual)%0A            print(gasto)%0A\n     \n",
+            "lines": "103"
+        },
+        {
+            "label": "2025-11-16_13-59-54",
+            "content": "@@ -2129,83 +2129,8 @@\n to)%0A\n-            print(minimo_grafite)%0A            print(tamanho_atual - gasto)%0A\n     \n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-11-16_14-00-50",
+            "content": "@@ -2049,16 +2049,17 @@\n  gasto %3C\n+=\n  minimo_\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_14-01-00",
+            "content": "@@ -2222,28 +2222,11 @@\n nt('\n-fail: folha incomple\n+bos\n ta')\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_14-01-20",
+            "content": "@@ -2066,16 +2066,148 @@\n rafite:%0A\n+            print(tamanho_atual)%0A            print(gasto)%0A            print(minimo_grafite)%0A            print(tamanho_atual - gasto)\n %0A       \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-11-16_14-01-32",
+            "content": "@@ -2058,32 +2058,33 @@\n minimo_grafite:%0A\n+%0A\n             prin\n@@ -2115,42 +2115,8 @@\n a')%0A\n-            return minimo_grafite%0A\n     \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-01-51",
+            "content": "@@ -2129,28 +2129,30 @@\n  return \n-self.__bico.\n+minimo_grafite\n %0A       \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-02-13",
+            "content": "@@ -2145,36 +2145,8 @@\n ico.\n-getthickness(minimo_grafite)\n %0A   \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-02-14",
+            "content": "@@ -2129,16 +2129,56 @@\n  return \n+self.__bico.getthickness(minimo_grafite)\n %0A       \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-02-27",
+            "content": "@@ -2122,22 +2122,16 @@\n         \n-print(\n return %0A\n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-02-42",
+            "content": "@@ -2134,17 +2134,16 @@\n t(return\n-)\n  %0A      \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-02-44",
+            "content": "@@ -2126,72 +2126,22 @@\n     \n-tamanho_atual = minimo_grafite%0A            return minimo_grafite\n+print(return) \n %0A   \n",
+            "lines": "104"
+        },
+        {
+            "label": "2025-11-16_14-03-14",
+            "content": "@@ -2172,29 +2172,30 @@\n  return \n-tamanho_atual\n+minimo_grafite\n %0A       \n@@ -2223,17 +2223,16 @@\n sheet()%0A\n-%0A\n         \n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-11-16_14-03-37",
+            "content": "@@ -2126,63 +2126,71 @@\n     \n-%0A            return self.__bico.setsize(minimo_grafite)\n+tamanho_atual = minimo_grafite%0A            return tamanho_atual\n %0A   \n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-16_14-04-45",
+            "content": "@@ -557,94 +557,8 @@\n nho%0A\n-    def setthicness(self, novo_tamanho: int):%0A        self.__thickness = novo_tamanho%0A\n     \n@@ -2127,32 +2127,74 @@\n    %0A            \n+return self.__bico.setsize(minimo_grafite)\n %0A        self.__\n",
+            "lines": "106"
+        },
+        {
+            "label": "2025-11-16_14-05-29",
+            "content": "@@ -2212,47 +2212,8 @@\n     \n-self.__bico.setthicness(minimo_grafite)\n %0A   \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_14-05-44",
+            "content": "@@ -2232,18 +2232,30 @@\n hicness(\n-10\n+minimo_grafite\n )%0A      \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_14-05-54",
+            "content": "@@ -52,19 +52,19 @@\n rdness: \n-str\n+int\n , thickn\n@@ -215,28 +215,8 @@\n f):%0A\n-        consumo = 0%0A\n     \n@@ -259,24 +259,29 @@\n         \n-consumo \n+self.__size -\n = 1%0A    \n@@ -324,23 +324,29 @@\n         \n-consumo\n+self.__size -\n = 2%0A    \n@@ -389,24 +389,34 @@\n         \n-consumo \n+self.__thickness -\n = 4%0A    \n@@ -463,64 +463,24 @@\n     \n-consumo = 6%0A        self.__thickness -= consumo%0A        \n+self.__size -= 6\n %0A   \n",
+            "lines": "108"
+        },
+        {
+            "label": "2025-11-16_14-08-57",
+            "content": "@@ -2275,16 +2275,29 @@\n ess(10)%0A\n+            %0A\n         \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_14-09-16",
+            "content": "@@ -2239,100 +2239,8 @@\n a')%0A\n-            print(tamanho_atual)%0A            print(gasto)%0A            print(minimo_grafite)%0A\n     \n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-16_14-09-38",
+            "content": "@@ -2235,16 +2235,108 @@\n pleta')%0A\n+            print(tamanho_atual)%0A            print(gasto)%0A            print(minimo_grafite)%0A\n         \n@@ -2371,27 +2371,8 @@\n 10)%0A\n-            return%0A\n     \n",
+            "lines": "113"
+        },
+        {
+            "label": "2025-11-16_14-12-20",
+            "content": "@@ -2015,16 +2015,139 @@\n reza, 1)\n+%0A        if tamanho_atual %3C minimo_grafite:%0A            print('fail tamanho insuficiente')%0A            return tamanho_atual\n %0A%0A      \n@@ -2298,118 +2298,8 @@\n urn%0A\n-        if tamanho_atual %3C minimo_grafite:%0A            print('fail tamanho insuficiente')%0A            return %0A\n     \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_14-12-57",
+            "content": "@@ -2197,17 +2197,16 @@\n _atual %3C\n-=\n  minimo_\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_14-13-13",
+            "content": "@@ -2021,119 +2021,8 @@\n 1)%0A%0A\n-        if tamanho_atual %3C= minimo_grafite:%0A            print('fail tamanho insuficiente')%0A            return %0A\n     \n@@ -2171,16 +2171,127 @@\n  return%0A\n+        if tamanho_atual %3C= minimo_grafite:%0A            print('fail tamanho insuficiente')%0A            return %0A\n         \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_14-13-50",
+            "content": "@@ -2084,17 +2084,16 @@\n nt('fail\n-:\n  tamanho\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-11-16_14-14-05",
+            "content": "class Grafite:\n    def __init__(self, size: str, hardness: str, thickness: int):\n        self.__size = size\n        self.__hardness = hardness\n        self.__thickness = thickness\n        \n    def usagepersheet(self):\n        consumo = 0\n        if self.__hardness == 'HB':\n            consumo = 1\n        if self.__hardness == '2B':\n            consumo= 2\n        if self.__hardness == '4B':\n            consumo = 4\n        if self.__hardness == '6B':\n            consumo = 6\n        self.__thickness -= consumo\n        \n    def setsize(self, novo_tamanho: int):\n        self.__size = novo_tamanho\n    def setthicness(self, novo_tamanho: int):\n        self.__thickness = novo_tamanho\n    def getthickness(self):\n        return self.__thickness\n    def gethardness(self):\n        return self.__hardness\n    def getsize(self):\n        return self.__size\n    def __str__(self):\n        return f\"[{self.__size}:{self.__hardness}:{self.__thickness}]\"\nclass Lapiseira:\n    def __init__(self, calibre: int):\n        self.__calibre = calibre\n        self.__bico: Grafite | None = None\n        self.__tambor: list[Grafite] = []\n    \n    def insert(self, grafite: Grafite) -> bool:\n        if grafite.getsize() != self.__calibre:\n            print('fail: calibre incompat\u00edvel')\n            return False\n        self.__tambor.append(grafite)\n        return True\n\n    def pull(self) -> bool:\n        if self.__bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        self.__bico = self.__tambor.pop(0)\n        return True\n\n    def remove(self) -> Grafite | None:\n        grafite_removido = self.__bico\n        self.__bico = None\n\n    def write(self, folhas: int = 1) -> bool:\n        minimo_grafite = 10\n\n        if self.__bico is None:\n            print('fail: nao existe grafite no bico')\n            return False\n        \n        tamanho_atual = self.__bico.getthickness()\n        dureza = self.__bico.gethardness()\n        gasto = {'HB': 1, '2B': 2, '4B': 4, '6B': 6}.get(dureza, 1)\n\n        if tamanho_atual <= minimo_grafite:\n            print('fail: tamanho insuficiente')\n            return \n        if tamanho_atual - gasto < minimo_grafite:\n            print('fail: folha incompleta')\n            self.__bico.setthicness(10)\n            return\n        self.__bico.usagepersheet()\n\n            \n\n    def __str__(self) -> str:\n        if self.__bico is None:\n            colchetes = '[]'\n            tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n            return f\"calibre: {self.__calibre}, bico: {colchetes}, tambor: {tambor_str}\"\n        tambor_str = \"<\" + ''.join(str(grafite) for grafite in self.__tambor) + \">\"\n        return f\"calibre: {self.__calibre}, bico: {self.__bico}, tambor: {tambor_str}\"\n\ndef main():\n    while True:\n        linha: str = input()\n        args: list[str] = linha.split(' ')\n        print(f'$' + linha)\n\n        if args[0] == 'end':\n            break\n        elif args[0] == 'init':\n            calibre = float(args[1])\n            polis = Lapiseira(calibre)\n        elif args[0] == 'show':\n            print(polis)\n        elif args[0] == 'insert':\n            size = float(args[1])\n            hardness = args[2]\n            thickness = int(args[3])\n            graf = Grafite(size, hardness, thickness)\n            # print(graf)\n            polis.insert(graf)\n        elif args[0] == 'pull':\n            polis.pull()\n        elif args[0] == 'remove':\n            polis.remove()\n        elif args[0] == 'write':\n            polis.write()\nmain()",
+            "lines": "111"
         }
     ]
 }
