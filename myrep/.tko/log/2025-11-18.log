@@ -1,0 +1,124 @@
+2025-11-18 10:21:05, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 10:21:06, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:0
+2025-11-18 10:38:05, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:40
+2025-11-18 10:43:37, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:44
+2025-11-18 10:45:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:45
+2025-11-18 10:45:23, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 10:46:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:45
+2025-11-18 10:46:21, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:45
+2025-11-18 10:46:32, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:45
+2025-11-18 10:47:10, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:46
+2025-11-18 10:47:18, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:46
+2025-11-18 10:47:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:46
+2025-11-18 10:48:19, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:47
+2025-11-18 11:31:21, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:47
+2025-11-18 11:31:28, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:47
+2025-11-18 11:31:29, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:32:39, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:32:40, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:32:58, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:51
+2025-11-18 11:33:00, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:34:16, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:34:33, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:34:39, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:34:40, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:34:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:50
+2025-11-18 11:36:56, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:52
+2025-11-18 11:40:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:55
+2025-11-18 11:40:11, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:55
+2025-11-18 11:41:05, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:41:05, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:41:10, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:41:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10
+2025-11-18 11:42:00, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10
+2025-11-18 11:43:38, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:43:38, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:43:43, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:44:55, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:61
+2025-11-18 11:44:55, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:61
+2025-11-18 11:49:11, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:49:11, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:49:49, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:55
+2025-11-18 11:50:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:50:31, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:51:16, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:56
+2025-11-18 11:51:17, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:51:18, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:51:18, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0
+2025-11-18 11:51:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:55
+2025-11-18 11:52:22, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:55
+2025-11-18 11:53:35, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20, size:56
+2025-11-18 11:54:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:57
+2025-11-18 11:54:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:54:18, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30, size:57
+2025-11-18 11:55:07, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:55:13, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:10, size:57
+2025-11-18 11:55:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30, size:57
+2025-11-18 11:55:28, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:57
+2025-11-18 11:56:12, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30
+2025-11-18 11:56:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30
+2025-11-18 11:56:27, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:57
+2025-11-18 11:56:49, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:57
+2025-11-18 11:56:59, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40
+2025-11-18 11:59:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:57
+2025-11-18 11:59:13, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30, size:57
+2025-11-18 11:59:32, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:30, size:57
+2025-11-18 11:59:35, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40
+2025-11-18 12:00:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:50, size:57
+2025-11-18 12:01:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:50, size:57
+2025-11-18 12:04:08, EXEC, v:1, k:poo@pula-pula, mode:FREE, size:61
+2025-11-18 12:04:25, EXEC, v:1, k:poo@pula-pula, mode:FREE, size:59
+2025-11-18 12:05:17, EXEC, v:1, k:poo@pula-pula, mode:FREE, size:59
+2025-11-18 12:05:59, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:50, size:59
+2025-11-18 12:08:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:50, size:61
+2025-11-18 12:08:47, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:60, size:63
+2025-11-18 12:16:45, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:71
+2025-11-18 12:17:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:72
+2025-11-18 12:17:04, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40
+2025-11-18 12:19:10, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:60, size:72
+2025-11-18 12:19:53, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:73
+2025-11-18 12:19:54, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40, size:74
+2025-11-18 12:20:04, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:40
+2025-11-18 12:20:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:60, size:72
+2025-11-18 12:21:43, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:75
+2025-11-18 12:23:24, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:23:37, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 12:23:38, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70
+2025-11-18 12:24:43, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:77
+2025-11-18 12:25:01, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:76
+2025-11-18 12:25:21, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:75
+2025-11-18 12:28:30, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:77
+2025-11-18 12:30:07, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:80, size:81
+2025-11-18 12:30:43, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:80, size:79
+2025-11-18 12:30:58, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:78
+2025-11-18 12:31:30, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:79
+2025-11-18 12:31:31, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:31:50, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:80
+2025-11-18 12:32:00, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:32:19, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:32:25, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:32:38, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:33:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:80, size:79
+2025-11-18 12:33:44, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:79
+2025-11-18 12:33:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:70, size:79
+2025-11-18 12:33:53, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:80
+2025-11-18 12:34:32, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:79
+2025-11-18 12:35:02, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:79
+2025-11-18 12:36:51, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:71
+2025-11-18 12:37:36, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:80, size:73
+2025-11-18 12:38:08, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:90, size:75
+2025-11-18 12:38:52, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:77
+2025-11-18 12:38:53, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:38:53, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 12:38:54, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:38:56, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 12:41:11, EXEC, v:1, k:poo@pula-pula, mode:LOCK, rate:100, size:78
+2025-11-18 12:41:11, EXEC, v:1, k:poo@pula-pula, mode:LOCK, rate:100, size:78
+2025-11-18 12:41:17, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:41:19, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 12:41:20, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:78
+2025-11-18 12:41:21, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:41:58, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 12:41:59, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:78
+2025-11-18 12:43:02, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 12:43:39, SELF, v:1, k:poo@pula-pula, rate:100, iagen:gpt, guide:aula_explicacao, alone:9, study:160

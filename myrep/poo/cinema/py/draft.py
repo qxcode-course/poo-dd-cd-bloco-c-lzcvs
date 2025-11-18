@@ -43,8 +43,7 @@ class Cinema:
             print('fail: cadeira ja esta ocupada')
             return False
         self.seats[index] = cliente
-        return True
-    
+        return 
     def cancelar(self, id: str):
         for i, cliente in enumerate(self.seats):
             if cliente != None and cliente.getid() == id:

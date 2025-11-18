@@ -1,0 +1,429 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-18_10-21-06",
+            "content": "@@ -1,914 +0,0 @@\n-class Crianca:%0A    def __init__(self, nome: str, idade: int):%0A        self.__nome = nome%0A        self.__idade = idade%0A    %0A    def getnome(self):%0A        return self.__nome%0A%0A    def setnome(self, nome_novo: str):%0A        self.__nome = nome_novo%0A%0A    def getidade(self):%0A        return self.__idade%0A    %0A    def setidade(self, nova_idade: int):%0A        self.__idade = nova_idade%0A%0A    def __str__(self):%0A        return f'%7Bself.__nome%7D:%7Bself.__idade%7D'%0A%0Aclass PulaPula:%0A    def __init__(self):%0A        self.__brincado: list%5BCrianca%5D = %5B%5D%0A        self.__esperando: list%5BCrianca%5D = %5B%5D%0A%0A    def __str__(self):%0A        return f%22%7Bself.__brincado%7D =%3E %7Bself.__esperando%7D%22%0A%0Adef main():%0A    pulapula = PulaPula()%0A    while True:%0A        linha = input()%0A        args = linha.split(' ')%0A        print(f%22$%22 + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(pulapula)%0Amain()\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-18_10-38-05",
+            "content": "@@ -577,110 +577,8 @@\n %5B%5D%0A%0A\n-    def chegar(self, crianca: Crianca):%0A        self.__esperando.append(crianca)%0A        return True%0A%0A\n     \n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-11-18_10-43-37",
+            "content": "@@ -702,69 +702,8 @@\n f):%0A\n-        fila = ', '.join(%5Bstr(p) for p in self.__esperando%5D)%0A\n     \n@@ -741,12 +741,24 @@\n =%3E %7B\n-fila\n+self.__esperando\n %7D%22%0A%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-18_10-45-20",
+            "content": "@@ -706,24 +706,20 @@\n         \n-brincado\n+fila\n  = ', '.\n@@ -747,22 +747,23 @@\n  self.__\n-brinca\n+esperan\n do%5D)%0A   \n@@ -777,16 +777,23 @@\n turn f%22%7B\n+self.__\n brincado\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-18_10-46-20",
+            "content": "@@ -794,32 +794,20 @@\n do%7D =%3E %7B\n-self.__esperando\n+fila\n %7D%22%0A%0Adef \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-18_10-46-21",
+            "content": "@@ -779,17 +779,16 @@\n eturn f%22\n-%5B\n %7Bbrincad\n@@ -789,17 +789,16 @@\n rincado%7D\n-%5D\n  =%3E %7Bsel\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-18_10-46-32",
+            "content": "@@ -766,74 +766,8 @@\n o%5D)%0A\n-        esperando = ', '.join(%5Bstr(p) for p in self.__esperando%5D)%0A\n     \n@@ -796,16 +796,23 @@\n o%7D%5D =%3E %7B\n+self.__\n esperand\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-18_10-47-10",
+            "content": "@@ -847,23 +847,22 @@\n urn f%22%5B%7B\n-esperan\n+brinca\n do%7D%5D =%3E \n@@ -862,22 +862,23 @@\n o%7D%5D =%3E %7B\n-brinca\n+esperan\n do%7D%22%0A%0Ade\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-18_10-47-18",
+            "content": "@@ -862,17 +862,16 @@\n do%7D%5D =%3E \n-%5B\n %7Bbrincad\n@@ -872,17 +872,16 @@\n rincado%7D\n-%5D\n %22%0A%0Adef m\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-18_10-47-26",
+            "content": "@@ -571,25 +571,16 @@\n ca%5D = %5B%5D\n-%0A        \n %0A%0A    de\n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-11-18_10-48-19",
+            "content": "@@ -772,14 +772,8 @@\n cado\n-%5B::-1%5D\n %5D)%0A \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-18_11-31-21",
+            "content": "@@ -840,22 +840,16 @@\n sperando\n-%5B::-1%5D\n %5D)%0A     \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-18_11-31-28",
+            "content": "@@ -1148,99 +1148,8 @@\n la)%0A\n-        elif args%5B0%5D == 'arrive':%0A            nome = args%5B1%5D%0A            pulapula.chegar()%0A\n main\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-18_11-32-39",
+            "content": "@@ -1233,20 +1233,16 @@\n .chegar(\n-nome\n )%0Amain()\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-32-40",
+            "content": "@@ -1209,36 +1209,8 @@\n %5B1%5D%0A\n-            idade = args%5B2%5D%0A\n     \n@@ -1237,23 +1237,16 @@\n gar(nome\n-, idade\n )%0Amain()\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-32-58",
+            "content": "@@ -1205,16 +1205,44 @@\n args%5B1%5D%0A\n+            idade = args%5B2%5D%0A\n         \n@@ -1265,16 +1265,23 @@\n gar(nome\n+, idade\n )%0Amain()\n",
+            "lines": "51"
+        },
+        {
+            "label": "2025-11-18_11-34-16",
+            "content": "@@ -768,16 +768,22 @@\n brincado\n+%5B::-1%5D\n %5D)%0A     \n@@ -840,16 +840,22 @@\n sperando\n+%5B::-1%5D\n %5D)%0A     \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-34-33",
+            "content": "@@ -772,12 +772,8 @@\n cado\n-%5B-1%5D\n %5D)%0A \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-34-39",
+            "content": "@@ -769,18 +769,16 @@\n rincado%5B\n-::\n -1%5D%5D)%0A  \n@@ -842,14 +842,8 @@\n ando\n-%5B::-1%5D\n %5D)%0A \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-34-48",
+            "content": "@@ -1209,79 +1209,8 @@\n %5B1%5D%0A\n-            idade = args%5B2%5D%0A            crianca = Crianca(nome, idade)%0A\n     \n@@ -1233,23 +1233,20 @@\n .chegar(\n-crianca\n+nome\n )%0Amain()\n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-11-18_11-36-56",
+            "content": "@@ -686,84 +686,8 @@\n True\n-%0A    %0A    def enter(self):%0A        self.__brincado = self.__esperando.pop(0)\n %0A%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-18_11-40-01",
+            "content": "@@ -752,22 +752,19 @@\n perando.\n-append\n+pop\n (0)%0A%0A   \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-18_11-40-11",
+            "content": "@@ -1,1400 +1,85 @@\n-class Crianca:%0A    def __init__(self, nome: str, idade: int):%0A        self.__nome = nome%0A        self.__idade = idade%0A    %0A    def getnome(self):%0A        return self.__nome%0A%0A    def setnome(self, nome_novo: str):%0A        self.__nome = nome_novo%0A%0A    def getidade(self):%0A        return self.__idade%0A    %0A    def setidade(self, nova_idade: int):%0A        self.__idade = nova_idade%0A%0A    def __str__(self):%0A        return f'%7Bself.__nome%7D:%7Bself.__idade%7D'%0A%0Aclass PulaPula:%0A    def __init__(self):%0A        self.__brincado: list%5BCrianca%5D = %5B%5D%0A        self.__esperando: list%5BCrianca%5D = %5B%5D%0A        %0A%0A    def chegar(self, crianca: Crianca):%0A        self.__esperando.append(crianca)%0A        return True%0A    %0A    def enter(self):%0A        self.__brincado = self.__esperando.pop(0)%0A%0A    def __str__(self):%0A        brincado = ', '.join(%5Bstr(p) for p in self.__brincado%5B::-1%5D%5D)%0A        esperando = ', '.join(%5Bstr(p) for p in self.__esperando%5B::-1%5D%5D)%0A        return f%22%5B%7Besperando%7D%5D =%3E %5B%7Bbrincado%7D%5D%22%0A%0Adef main():%0A    pulapula = PulaPula()%0A    while True:%0A        linha = input()%0A        args = linha.split(' ')%0A        print(f%22$%22 + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(pulapula)%0A        elif args%5B0%5D == 'arrive':%0A            nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            crianca = Crianca(nome, idade)%0A            pulapula.chegar(crianca)%0A\n+@@ -756,11 +756,14 @@%0A ndo.%0A-pop%0A+append%0A (0)%250A%0A@@ -1396,70 +1396,8 @@%0A ca)%250A%0A-\n     \n@@ -95,11 +95,15 @@\n args\n-%5B0%5D\n+%255B0%255D\n  == \n@@ -110,17 +110,19 @@\n 'enter':\n-%0A\n+%250A\n         \n@@ -145,11 +145,14 @@\n er()\n-%0A\n+%250A%0A \n main\n-()\n+%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-18_11-41-10",
+            "content": "@@ -900,20 +900,16 @@\n or p in \n-str(\n self.__e\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-43-38",
+            "content": "@@ -920,17 +920,16 @@\n sperando\n-)\n %5B::-1%5D%5D)\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-43-38",
+            "content": "@@ -1,12 +1,34 @@\n+@@ -1,1454 +1,298 @@%0A-\n class Crianc\n@@ -29,17 +29,19 @@\n Crianca:\n-%0A\n+%250A\n     def \n@@ -70,33 +70,35 @@\n tr, idade: int):\n-%0A\n+%250A\n         self.__n\n@@ -107,17 +107,19 @@\n e = nome\n-%0A\n+%250A\n         \n@@ -134,30 +134,34 @@\n dade = idade\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     def getn\n@@ -162,33 +162,35 @@\n f getnome(self):\n-%0A\n+%250A\n         return s\n@@ -199,18 +199,22 @@\n f.__nome\n-%0A%0A\n+%250A%250A\n     def \n@@ -243,17 +243,19 @@\n o: str):\n-%0A\n+%250A\n         \n@@ -277,18 +277,22 @@\n ome_novo\n-%0A%0A\n+%250A%250A\n     def \n@@ -302,25 +302,27 @@\n idade(self):\n-%0A\n+%250A\n         retu\n@@ -336,22 +336,26 @@\n .__idade\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     def \n@@ -386,17 +386,19 @@\n e: int):\n-%0A\n+%250A\n         \n@@ -422,18 +422,22 @@\n va_idade\n-%0A%0A\n+%250A%250A\n     def \n@@ -442,33 +442,35 @@\n f __str__(self):\n-%0A\n+%250A\n         return f\n@@ -470,17 +470,19 @@\n eturn f'\n-%7B\n+%257B\n self.__n\n@@ -488,11 +488,15 @@\n nome\n-%7D:%7B\n+%257D:%257B\n self\n@@ -507,12 +507,18 @@\n dade\n-%7D'%0A%0A\n+%257D'%250A%250A\n clas\n@@ -528,17 +528,19 @@\n ulaPula:\n-%0A\n+%250A\n     def \n@@ -546,33 +546,35 @@\n  __init__(self):\n-%0A\n+%250A\n         self.__b\n@@ -582,39 +582,49 @@\n incado: list\n-%5B\n+%255B\n Crianca\n-%5D = %5B%5D%0A\n+%255D = %255B%255D%250A\n         self\n@@ -645,31 +645,41 @@\n list\n-%5B\n+%255B\n Crianca\n-%5D = %5B%5D%0A\n+%255D = %255B%255D%250A\n         \n %0A%0A  \n@@ -674,18 +674,22 @@\n         \n-%0A%0A\n+%250A%250A\n     def \n@@ -719,17 +719,19 @@\n rianca):\n-%0A\n+%250A\n         \n@@ -754,33 +754,35 @@\n .append(crianca)\n-%0A\n+%250A\n         return T\n@@ -788,14 +788,18 @@\n True\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     \n@@ -810,25 +810,27 @@\n enter(self):\n-%0A\n+%250A\n         self\n@@ -866,18 +866,22 @@\n o.pop(0)\n-%0A%0A\n+%250A%250A\n     def \n@@ -894,17 +894,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -919,33 +919,35 @@\n ndo = ', '.join(\n-%5B\n+%255B\n str(x) for x in \n@@ -961,19 +961,23 @@\n brincado\n-%5D)%0A\n+%255D)%250A\n         \n@@ -998,17 +998,19 @@\n  '.join(\n-%5B\n+%255B\n str(x) f\n@@ -1037,11 +1037,15 @@\n ando\n-%5D)%0A\n+%255D)%250A\n     \n@@ -1057,18 +1057,22 @@\n eturn f'\n-%5B%7B\n+%255B%257B\n esperand\n@@ -1076,30 +1076,48 @@\n ando\n-%7D%5D =%3E %5B%7Bbrincando%7D%5D'%0A%0A\n+%257D%255D =%253E %255B%257Bbrincando%257D%255D'%250A%250A\n def \n@@ -1123,17 +1123,19 @@\n  main():\n-%0A\n+%250A\n     pula\n@@ -1151,17 +1151,19 @@\n laPula()\n-%0A\n+%250A\n     whil\n@@ -1169,17 +1169,19 @@\n le True:\n-%0A\n+%250A\n         \n@@ -1195,17 +1195,19 @@\n  input()\n-%0A\n+%250A\n         \n@@ -1229,17 +1229,19 @@\n lit(' ')\n-%0A\n+%250A\n         \n@@ -1251,11 +1251,15 @@\n nt(f\n-%22$%22\n+%2522$%2522\n  + l\n@@ -1267,10 +1267,14 @@\n nha)\n-%0A%0A\n+%250A%250A\n     \n@@ -1280,27 +1280,31 @@\n      if args\n-%5B0%5D\n+%255B0%255D\n  == 'end':%0A \n@@ -1301,17 +1301,19 @@\n = 'end':\n-%0A\n+%250A\n         \n@@ -1321,17 +1321,19 @@\n    break\n-%0A\n+%250A\n         \n@@ -1337,27 +1337,31 @@\n    elif args\n-%5B0%5D\n+%255B0%255D\n  == 'show':%0A\n@@ -1359,17 +1359,19 @@\n  'show':\n-%0A\n+%250A\n         \n@@ -1389,17 +1389,19 @@\n ulapula)\n-%0A\n+%250A\n         \n@@ -1405,27 +1405,31 @@\n    elif args\n-%5B0%5D\n+%255B0%255D\n  == 'arrive'\n@@ -1433,39 +1433,123 @@\n ve':\n-%0A            crianca = args%5B1%5D%0A\n+%250A            nome = args%255B1%255D%250A            idade = args%255B2%255D%250A            crianca = Crianca(nome, idade)%250A\n     \n@@ -1580,17 +1580,19 @@\n crianca)\n-%0A\n+%250A\n         \n@@ -1604,11 +1604,15 @@\n args\n-%5B0%5D\n+%255B0%255D\n  == \n@@ -1619,17 +1619,19 @@\n 'enter':\n-%0A\n+%250A\n         \n@@ -1654,11 +1654,368 @@\n er()\n-%0A\n+%250A\n main()\n+%0A+@@ -787,25 +787,8 @@%250A f):%25250A%250A-        try:%25250A    %250A     %250A@@ -857,96 +857,8 @@%250A %25255D%25255D)%25250A%250A-        except TypeError:%25250A            brincando = str(self.__brincado)  %25250A              %25250A%250A     %250A@@ -896,24 +896,28 @@%250A p) for p in %250A+str(%250A self.__esper%250A@@ -920,16 +920,17 @@%250A sperando%250A+)%250A %25255B::-1%25255D%25255D)%250A%0A\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-18_11-49-49",
+            "content": "@@ -956,16 +956,19 @@\n %5B%7Bbrinca\n+ndo\n %7D%5D'%0A%0Adef\n@@ -1260,93 +1260,25 @@\n     \n-nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            crianca = Crianca(nome, idade)\n+crianca = args%5B1%5D\n %0A   \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-18_11-50-20",
+            "content": "@@ -956,19 +956,16 @@\n %5B%7Bbrinca\n-ndo\n %7D%5D'%0A%0Adef\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-50-31",
+            "content": "@@ -688,16 +688,86 @@\n ue%0A    %0A\n+    def enter(self):%0A        self.__brincado = self.__esperando.pop(0)\n %0A%0A    de\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-51-16",
+            "content": "@@ -1317,15 +1317,68 @@\n         \n+elif args%5B0%5D == 'enter':%0A            pulapula.enter()\n %0Amain()\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-18_11-51-26",
+            "content": "@@ -775,22 +775,16 @@\n brincado\n-%5B::-1%5D\n %5D)%0A     \n@@ -845,14 +845,8 @@\n ando\n-%5B::-1%5D\n %5D)%0A \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-18_11-52-22",
+            "content": "@@ -692,107 +692,9 @@\n    %0A\n-    def enter(self):%0A        espera = self.__espera.pop()%0A        self.__brincado.insert(0, espera)\n+%0A\n %0A   \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-18_11-53-35",
+            "content": "@@ -1431,45 +1431,8 @@\n     \n-elif args%5B0%5D == 'enter':%0A            \n %0Amai\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-18_11-54-01",
+            "content": "@@ -1468,24 +1468,8 @@\n     \n-pulapula.enter()\n %0Amai\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-54-01",
+            "content": "@@ -739,19 +739,16 @@\n __espera\n-ndo\n .pop()%0A \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-54-18",
+            "content": "@@ -751,9 +751,8 @@\n pop(\n-3\n )%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-55-07",
+            "content": "@@ -747,17 +747,17 @@\n ndo.pop(\n-2\n+3\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-55-13",
+            "content": "@@ -747,17 +747,17 @@\n ndo.pop(\n-0\n+2\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-55-20",
+            "content": "@@ -747,18 +747,17 @@\n ndo.pop(\n--1\n+0\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-55-28",
+            "content": "@@ -747,17 +747,18 @@\n ndo.pop(\n-0\n+-1\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-56-27",
+            "content": "@@ -781,18 +781,17 @@\n .insert(\n--1\n+0\n , espera\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-56-49",
+            "content": "@@ -781,17 +781,18 @@\n .insert(\n-0\n+-1\n , espera\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-59-01",
+            "content": "@@ -747,16 +747,17 @@\n ndo.pop(\n+0\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-59-13",
+            "content": "@@ -747,17 +747,16 @@\n ndo.pop(\n-0\n )%0A      \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_11-59-32",
+            "content": "@@ -781,17 +781,17 @@\n .insert(\n-2\n+0\n , espera\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_12-00-48",
+            "content": "@@ -781,17 +781,17 @@\n .insert(\n-1\n+2\n , espera\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_12-01-20",
+            "content": "@@ -796,40 +796,8 @@\n ra)%0A\n-%0A    def leave(self):%0A        %0A%0A\n     \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-18_12-04-08",
+            "content": "@@ -793,16 +793,46 @@\n spera)%0A%0A\n+    def leave(self):%0A        %0A\n %0A    def\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-18_12-04-25",
+            "content": "@@ -781,17 +781,17 @@\n .insert(\n-0\n+1\n , espera\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-18_12-05-17",
+            "content": "@@ -781,17 +781,17 @@\n .insert(\n-1\n+0\n , espera\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-18_12-05-59",
+            "content": "@@ -797,113 +797,8 @@\n a)%0A%0A\n-    def leave(self):%0A        pulando = self.__brincado.pop(0)%0A        self.__esperando.insert(1, pulando)\n %0A   \n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-18_12-08-20",
+            "content": "@@ -1596,70 +1596,8 @@\n r()%0A\n-        elif args%5B0%5D == 'leave':%0A            pulapula.leave()%0A\n main\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-18_12-08-47",
+            "content": "@@ -903,120 +903,8 @@\n do)%0A\n-    %0A    def remove(self, nome: str) -%3E Crianca %7C None:%0A        crianca_removida = self.__esperando.getnome()%0A%0A%0A\n     \n@@ -1658,103 +1658,8 @@\n e()%0A\n-        elif args%5B0%5D == 'remove':%0A            nome = args%5B1%5D%0A            pulapula.remove(nome)%0A\n main\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-18_12-16-45",
+            "content": "@@ -1002,40 +1002,18 @@\n ando\n-%0A        self.__esperando = None\n+.getnome()\n %0A%0A%0A \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-18_12-17-01",
+            "content": "@@ -967,22 +967,26 @@\n     \n-for \n crianca\n- in\n+_removida =\n  sel\n@@ -998,17 +998,16 @@\n sperando\n-:\n %0A       \n@@ -1011,90 +1011,32 @@\n     \n-    if crianca.getnome() == nome:%0A                self.__esperando.remove(crianca)\n+self.__esperando = None%0A\n %0A%0A  \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-18_12-19-09",
+            "content": "@@ -1090,35 +1090,8 @@\n nca)\n-%0A            if crianca.get\n %0A%0A  \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-18_12-19-53",
+            "content": "@@ -1117,71 +1117,8 @@\n .get\n-nome() == nome:%0A                self.__brincado.remove(crianca)\n %0A%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_12-19-54",
+            "content": "@@ -1086,16 +1086,106 @@\n crianca)\n+%0A            if crianca.getnome() == nome:%0A                self.__brincado.remove(crianca)\n %0A%0A    de\n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-18_12-20-20",
+            "content": "@@ -1090,138 +1090,8 @@\n nca)\n-%0A        for crianca in self.__brincado:%0A            if crianca.getnome() == nome:%0A                self.__brincado.remove(crianca)\n %0A%0A  \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-18_12-21-43",
+            "content": "@@ -818,63 +818,8 @@\n f):%0A\n-        if self.__brincado is None:%0A            return%0A\n     \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-18_12-24-43",
+            "content": "@@ -848,12 +848,8 @@\n  is \n-not \n None\n@@ -850,24 +850,39 @@\n s None:%0A    \n+        return%0A\n         pula\n@@ -906,28 +906,24 @@\n cado.pop(0)%0A\n-    \n         self\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-18_12-25-01",
+            "content": "@@ -806,32 +806,76 @@\n ef leave(self):%0A\n+        if self.__brincado is not None:%0A    \n         pulando \n@@ -891,32 +891,36 @@\n brincado.pop(0)%0A\n+    \n         self.__e\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-18_12-25-21",
+            "content": "@@ -818,65 +818,8 @@\n f):%0A\n-        if not self.__brincado:%0A            return False%0A\n     \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-18_12-28-30",
+            "content": "@@ -1148,80 +1148,8 @@\n ca)%0A\n-            if crianca.getnome() != nome:%0A                print('Fail')%0A\n     \n@@ -1277,80 +1277,8 @@\n nca)\n-%0A            if crianca.getnome() != nome:%0A                print('Fail')\n %0A%0A  \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-18_12-30-07",
+            "content": "@@ -1136,32 +1136,104 @@\n remove(crianca)%0A\n+            if crianca.getnome() != nome:%0A                print('Fail')%0A\n         for cria\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-18_12-30-43",
+            "content": "@@ -1274,32 +1274,95 @@\n rianca)%0A        \n+    if crianca.getnome() != nome:%0A                print('Fail')\n %0A%0A    def __str_\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-30-58",
+            "content": "@@ -1286,77 +1286,8 @@\n     \n-if self.__brincado is None and self.__esperando is None:%0A            \n %0A%0A  \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-18_12-31-30",
+            "content": "@@ -1355,21 +1355,8 @@\n     \n-print('fail')\n %0A%0A  \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-31-31",
+            "content": "@@ -1278,36 +1278,8 @@\n ca)%0A\n-                return None%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-31-50",
+            "content": "@@ -1266,32 +1266,60 @@\n remove(crianca)%0A\n+                return None%0A\n         if self.\n@@ -1390,10 +1390,12 @@\n nt('\n-OI\n+fail\n ')%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-18_12-32-00",
+            "content": "@@ -1016,97 +1016,8 @@\n ne:%0A\n-        if self.__brincado is None and self.__esperando is None:%0A            print('OI')%0A\n     \n@@ -1273,16 +1273,105 @@\n crianca)\n+%0A        if self.__brincado is None and self.__esperando is None:%0A            print('OI')\n %0A%0A    de\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-32-19",
+            "content": "@@ -1008,24 +1008,113 @@\n nca %7C None:%0A\n+        if self.__brincado is None and self.__esperando is None:%0A            print('OI')%0A\n         for \n@@ -1366,97 +1366,8 @@\n nca)\n-%0A        if self.__brincado is None and self.__esperando is None:%0A            print('OI')\n %0A%0A  \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-32-25",
+            "content": "@@ -1358,16 +1358,18 @@\n  print('\n+OI\n ')%0A%0A    \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-32-38",
+            "content": "@@ -1277,36 +1277,32 @@\n nca)%0A        if \n-not \n self.__brincado \n@@ -1305,15 +1305,19 @@\n ado \n-and not\n+is None and\n  sel\n@@ -1321,32 +1321,40 @@\n self.__esperando\n+ is None\n :%0A            pr\n@@ -1362,12 +1362,8 @@\n nt('\n-fail\n ')%0A%0A\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-33-26",
+            "content": "@@ -1305,18 +1305,19 @@\n rincado \n-or\n+and\n  not sel\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-33-44",
+            "content": "@@ -1305,19 +1305,18 @@\n rincado \n-and\n+or\n  not sel\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-33-48",
+            "content": "@@ -1016,91 +1016,8 @@\n ne:%0A\n-        if not self.__brincado and not self.__esperando:%0A            print('fail')%0A\n     \n@@ -1273,16 +1273,99 @@\n crianca)\n+%0A        if not self.__brincado and not self.__esperando:%0A            print('fail')\n %0A%0A    de\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-34-32",
+            "content": "@@ -1091,44 +1091,13 @@\n int(\n-f\n 'fail\n-: %7Bnome%7D nao esta no pula-pula\n ')%0A \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-35-02",
+            "content": "@@ -572,24 +572,29 @@\n a%5D = %5B%5D%0A    \n+    %0A\n %0A    def che\n@@ -1012,32 +1012,399 @@\n %7C None:%0A        \n+if not self.__brincado and not self.__esperando:%0A            print(f'fail: %7Bnome%7D nao esta no pula-pula')%0A        for crianca in self.__esperando:%0A            if crianca.getnome() == nome:%0A                self.__esperando.remove(crianca)%0A        for crianca in self.__brincado:%0A            if crianca.getnome() == nome:%0A                self.__brincado.remove(crianca)\n %0A%0A    def __str_\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-18_12-36-51",
+            "content": "@@ -1019,131 +1019,8 @@\n     \n-for crianca in self.__esperando:%0A            if crianca.getnome() == nome:%0A                self.__esperando.remove(crianca)\n %0A%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-18_12-37-36",
+            "content": "@@ -1143,137 +1143,8 @@\n ca)%0A\n-        for crianca in self.__brincado:%0A            if crianca.getnome() == nome:%0A                self.__brincado.remove(crianca)\n %0A   \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-18_12-38-08",
+            "content": "@@ -1011,122 +1011,8 @@\n ne:%0A\n-        if not self.__brincado and not self.__esperando:%0A            print(f'fail: %7Bnome%7D nao esta no pula-pula')%0A\n     \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-18_12-38-52",
+            "content": "@@ -1,2263 +1,58 @@\n-class Crianca:%0A    def __init__(self, nome: str, idade: int):%0A        self.__nome = nome%0A        self.__idade = idade%0A    %0A    def getnome(self):%0A        return self.__nome%0A%0A    def setnome(self, nome_novo: str):%0A        self.__nome = nome_novo%0A%0A    def getidade(self):%0A        return self.__idade%0A    %0A    def setidade(self, nova_idade: int):%0A        self.__idade = nova_idade%0A%0A    def __str__(self):%0A        return f'%7Bself.__nome%7D:%7Bself.__idade%7D'%0A%0Aclass PulaPula:%0A    def __init__(self):%0A        self.__brincado: list%5BCrianca%5D = %5B%5D%0A        self.__esperando: list%5BCrianca%5D = %5B%5D%0A    %0A    def chegar(self, crianca: Crianca):%0A        self.__esperando.append(crianca)%0A        return True%0A    %0A    def enter(self):%0A        espera = self.__esperando.pop(0)%0A        self.__brincado.insert(1, espera)%0A%0A    def leave(self):%0A        if not self.__brincado:%0A            return False%0A        pulando = self.__brincado.pop(0)%0A        self.__esperando.insert(1, pulando)%0A    %0A    def remove(self, nome: str) -%3E Crianca %7C None:%0A        if not self.__brincado and not self.__esperando:%0A            print(f'fail: %7Bnome%7D nao esta no pula-pula')%0A        for crianca in self.__esperando:%0A            if crianca.getnome() == nome:%0A                self.__esperando.remove(crianca)%0A        for crianca in self.__brincado:%0A            if crianca.getnome() == nome:%0A                self.__brincado.remove(crianca)%0A                %0A    def __str__(self):%0A        brincando = ', '.join(%5Bstr(x) for x in self.__brincado%5B::-1%5D%5D)%0A        esperando = ', '.join(%5Bstr(x) for x in self.__esperando%5B::-1%5D%5D)%0A        return f'%5B%7Besperando%7D%5D =%3E %5B%7Bbrincando%7D%5D'%0A%0Adef main():%0A    pulapula = PulaPula()%0A    while True:%0A        linha = input()%0A        args = linha.split(' ')%0A        print(f%22$%22 + linha)%0A%0A        if args%5B0%5D == 'end':%0A            break%0A        elif args%5B0%5D == 'show':%0A            print(pulapula)%0A        elif args%5B0%5D == 'arrive':%0A            nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            crianca = Crianca(nome, idade)%0A            pulapula.chegar(crianca)%0A        elif args%5B0%5D == 'enter':%0A            pulapula.enter()%0A        elif args%5B0%5D == 'leave':%0A            pulapula.leave()%0A        elif args%5B0%5D == 'remove':%0A            nome = args%5B1%5D%0A            pulapula.remove(nome)%0Amain()\n+@@ -1387,25 +1387,8 @@%0A ca)%250A%0A-                %250A%0A     %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-18_12-41-20",
+            "content": "@@ -1383,16 +1383,32 @@\n rianca)%0A\n+                \n %0A    def\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-18_12-41-59",
+            "content": "class Crianca:\n    def __init__(self, nome: str, idade: int):\n        self.__nome = nome\n        self.__idade = idade\n    \n    def getnome(self):\n        return self.__nome\n\n    def setnome(self, nome_novo: str):\n        self.__nome = nome_novo\n\n    def getidade(self):\n        return self.__idade\n    \n    def setidade(self, nova_idade: int):\n        self.__idade = nova_idade\n\n    def __str__(self):\n        return f'{self.__nome}:{self.__idade}'\n\nclass PulaPula:\n    def __init__(self):\n        self.__brincado: list[Crianca] = []\n        self.__esperando: list[Crianca] = []\n    \n    def chegar(self, crianca: Crianca):\n        self.__esperando.append(crianca)\n        return True\n    \n    def enter(self):\n        espera = self.__esperando.pop(0)\n        self.__brincado.insert(1, espera)\n\n    def leave(self):\n        if not self.__brincado:\n            return False\n        pulando = self.__brincado.pop(0)\n        self.__esperando.insert(1, pulando)\n    \n    def remove(self, nome: str) -> Crianca | None:\n        if not self.__brincado and not self.__esperando:\n            print(f'fail: {nome} nao esta no pula-pula')\n        for crianca in self.__esperando:\n            if crianca.getnome() == nome:\n                self.__esperando.remove(crianca)\n        for crianca in self.__brincado:\n            if crianca.getnome() == nome:\n                self.__brincado.remove(crianca)\n\n    def __str__(self):\n        brincando = ', '.join([str(x) for x in self.__brincado[::-1]])\n        esperando = ', '.join([str(x) for x in self.__esperando[::-1]])\n        return f'[{esperando}] => [{brincando}]'\n\ndef main():\n    pulapula = PulaPula()\n    while True:\n        linha = input()\n        args = linha.split(' ')\n        print(f\"$\" + linha)\n\n        if args[0] == 'end':\n            break\n        elif args[0] == 'show':\n            print(pulapula)\n        elif args[0] == 'arrive':\n            nome = args[1]\n            idade = args[2]\n            crianca = Crianca(nome, idade)\n            pulapula.chegar(crianca)\n        elif args[0] == 'enter':\n            pulapula.enter()\n        elif args[0] == 'leave':\n            pulapula.leave()\n        elif args[0] == 'remove':\n            nome = args[1]\n            pulapula.remove(nome)\nmain()",
+            "lines": "78"
+        }
+    ]
+}
